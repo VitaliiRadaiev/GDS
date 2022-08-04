@@ -1,0 +1,51 @@
+
+
+//<ШРИФТЫ>===========================================================================================================
+$mainFontFamily:  'Rosales', sans-serif;
+$titleFontFamily: 'GRIFTERBold', sans-serif;
+$fontAwesome: "Font Awesome 5 Free";
+//</ШРИФТЫ>===========================================================================================================
+
+//<РАЗМЕРЫ КОНТЕЙНЕРА>===========================================================================================================
+$minwidth: 320px;
+$mw: 1170;
+$md1: 1267.98;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+//</РАЗМЕРЫ КОНТЕЙНЕРА>===========================================================================================================
+
+$textColor: #000;
+$textColorSecondary: #B9B9B9;
+$mainColor: #96E8FF;
+$dangerColor:  #FF4444;
+$successColor:#00C367;
+$infoColor: #BC62EF;
+$lightColor: #fff;
+$warningColor: #FFC31C;
+$bg: #0E0E0E;
+$bgSecondary: #0F1F22;
+$bgLight: #FFFFFF;
+$borderColor: #6799ED;;
+$gradient: linear-gradient(92.13deg, #ffffff 12.5%, #8ad9f7 75.02%);
+
+
+:root {
+    --bs-primary: #222222;
+    --bs-secondary: #037847;
+    --bs-success: #00C367;
+    --bs-info: #BC62EF;
+    --bs-warning: #FFC31C;
+    --bs-danger: #FF4444;
+    --bs-light: #fff;
+    --bs-dark: #000;
+
+    --bs-primary-rgb: 34, 34, 34;
+    --bs-secondary-rgb: 3, 120, 71;
+    --bs-success-rgb: 0, 195, 103;
+    --bs-info-rgb: 188, 98, 239;
+    --bs-warning-rgb: 255, 195, 28;
+    --bs-danger-rgb: 255, 68, 68;
+    --bs-light-rgb: 255, 255, 255;
+    --bs-dark-rgb: 0, 0, 0;
+}

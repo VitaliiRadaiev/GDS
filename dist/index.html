@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>GDS</title>
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		body.page-is-load ._preload-body {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		body.page-is-load ._preload-body:before {
+			display: none;
+		}
+
+		.mouse-dot {
+			font-size: 10px;
+			height: 2em;
+			width: 2em;
+			transition: transform, background-color, height, width .3s ease;
+			position: absolute;
+			z-index: 99999;
+			border-radius: 50%;
+			background-color: #222222;
+			transform: translate(-50%, -50%) scale(1);
+			pointer-events: none;
+			left: -30px;
+			top: -30px;
+			box-shadow: 0 0 15px rgba(243, 241, 239, 0.4);
+		}
+
+		.mouse-dot.hide {
+			transform: translate(-50%, -50%) scale(0);
+		}
+
+		.mouse-dot.hover {
+
+		}
+
+		._preload-body {
+			background-color: #fff;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 999;
+			transition: all .6s ease .2s;
+		}
+
+		._preload-body:before {
+			position: absolute;
+			content: '';
+			z-index: 999;
+			top: 50%;
+			left: 50%;
+			height: 50px;
+			width: 50px;
+			border-radius: 50%;
+			border: 4px solid #6e6e6e;
+			border-right: 4px solid #fff;
+			transform: translate(-50%, -50%);
+			animation: preloadBody 2s linear infinite;
+		}
+
+		@keyframes preloadBody {
+			from {
+				transform: translate(-50%, -50%) rotate(0);
+			}
+
+			to {
+				transform: translate(-50%, -50%) rotate(360deg);
+			}
+		}
+	</style>
+	
+<script src="js/vendors.js"></script>
+<script src="js/app.js"></script>
+<!-- <script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q82l2QjSzJJk1uUW3OzUBGPTlbk8w1g&callback=initMap&libraries=&v=weekly"
+defer
+></script> -->
+</head>
+
+<body>
+	<div class="_preload-body"></div>
+	<div class="main-wrapper">
+		<!-- == HEADER ================== -->
+		<header class="header " data-header data-popup="add-right-padding">
+    <div class="container">
+        <div class="header__body">
+            <div class="header__logo">
+                <a href="#">
+                    <img src="img/logo/logo.png" alt="">
+                </a>
+            </div>
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li>
+                        <a href="#">About us</a>
+                    </li>
+                    <li>
+                        <a href="#">Pricing</a>
+                    </li>
+                    <li>
+                        <a href="#">Booking</a>
+                    </li>
+                    <li>
+                        <a href="#">FAQs</a>
+                    </li>
+                </ul>
+            </nav>
+            <a href="#" class="header__link">
+                CONTACT US
+            </a>
+            <button class="header__burger" data-action="open-mob-menu">
+                <img class="img-svg" src="img/icons/burger.svg" alt="">
+            </button>
+        </div>
+    </div>
+</header>
+
+<div class="mobile-menu" data-mob-menu >
+    <div class="mobile-menu__head">
+        <div class="mobile-menu__logo">
+            <a href="#">
+                <img src="img/logo/logo.png" alt="">
+            </a>
+        </div>
+        <button class="mobile-menu__close" data-action="close-mob-menu"><span></span></button>
+    </div>
+    <div class="mobile-menu__scroll-wrap">
+        <a href="#" class="mobile-menu__link">
+            CONTACT US
+        </a>
+        <ul class="mobile-menu__nav">
+            <li>
+                <a href="#">About us</a>
+            </li>
+            <li>
+                <a href="#">Pricing</a>
+            </li>
+            <li>
+                <a href="#">Booking</a>
+            </li>
+            <li>
+                <a href="#">FAQs</a>
+            </li>
+        </ul>
+    </div>
+</div>
+		<!-- == // HEADER ================== -->
+
+		<main class="_page home-page">
+			<div class="padding-wrap padding-wrap--lg pt-0">
+				<section class="promo-header" data-padding-top-header-size>
+    <div class="promo-header__bg">
+        <picture>
+            <source srcset="img/photo/promo-header-bg.png"  media="(min-width: 768px)" >
+            <img  src="img/photo/promo-header-bg-mob.png" alt="img">
+        </picture>
+    </div>
+    <div class="promo-header__body container">
+        <h1 class="promo-header__title title-3 text-gradient">
+            A unique approach <br> to driver education.
+        </h1>
+        <div class="promo-header__text text-xl">
+            We utilize the best software to make the learning process thorough and engaging.
+        </div>
+        <a href="#" class="promo-header__btn btn-default btn-default--gradient">
+            Book a lesson
+        </a>
+        <ul class="promo-header__list">
+            <li>
+                <div class="promo-header__list-num">
+                    /01
+                </div>
+                <div class="promo-header__list-title">
+                    Theory
+                </div>
+                <div class="promo-header__list-img ibg">
+                    <img src="img/photo/promo-header-list-img-1.jpg" alt="">
+                </div>
+            </li>
+            <li>
+                <div class="promo-header__list-num">
+                    /02
+                </div>
+                <div class="promo-header__list-title">
+                    Practice
+                </div>
+                <div class="promo-header__list-img ibg">
+                    <img src="img/photo/promo-header-list-img-2.jpg" alt="">
+                </div>
+            </li>
+            <li>
+                <div class="promo-header__list-num">
+                    /03
+                </div>
+                <div class="promo-header__list-title">
+                    Unique approach
+                </div>
+                <div class="promo-header__list-img ibg">
+                    <img src="img/photo/promo-header-list-img-3.jpg" alt="">
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+			</div>
+
+			<div class="padding-wrap padding-wrap--lg">
+				<div class="container">
+					<div class="home-banner">
+						<div class="home-banner__col-1">
+							<div class="home-banner__row home-banner__row-1">
+								<h2 class="home-banner__title title-4">
+									At GDS we do things <span>differently</span>.
+								</h2>
+							</div>
+							<div class="home-banner__row home-banner__row-2">
+								<a href="#" class="home-banner__btn btn-default btn-default--border-gradient">
+									Learn more
+								</a>
+							</div>
+							<div class="home-banner__row home-banner__row-3">
+								<div class="home-banner__text text-fluid">
+									A lot of thought has gone into making the program well-structured and efficient.
+								</div>
+							</div>
+						</div>
+						<div class="home-banner__col-2">
+							<div class="home-banner__img ibg" data-da=".home-banner__row-3,767.98,last">
+								<img src="img/photo/home-banner-img.jpg" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="padding-wrap padding-wrap--lg">
+				<div class="container">
+					<div class="text-banner">
+						<div class="text-banner__shadow">
+							<img src="img/photo/shadow.png" alt="">
+						</div>
+						<div class="text-banner__body">
+							<div class="text-banner__row-1">
+								<div class="text-banner__big-text">Drive</div>
+								<div class="text-banner__text text-xl" data-da=".text-banner__row-5,767.98,last">
+									GDS strives hard to continuously improve its systems and teaching program to produce
+									the most knowledgeable and skilled probationary drivers.
+								</div>
+							</div>
+							<div class="text-banner__row-2">
+								<div class="text-banner__big-text">
+									like you’ve been
+								</div>
+							</div>
+							<div class="text-banner__row-3">
+								<div class="text-banner__big-text text-gradient">
+									driving
+								</div>
+							</div>
+							<div class="text-banner__row-4">
+								<div class="text-banner__text text-xl" data-da=".text-banner__row-5,767.98,first">
+									We aim for a lot more than a drive test pass.
+								</div>
+								<div class="text-banner__big-text">for years</div>
+							</div>
+							<div class="text-banner__row-5"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="padding-wrap padding-wrap--lg">
+				<div class="container">
+					<section class="home-banner-second">
+    <div class="home-banner-second__decor">
+        <img src="img/photo/home-banner-second-decor.png" alt="">
+    </div>
+    <div class="home-banner-second__slider swiper" data-slider="home-banner-second-slider" data-mobile="false">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="home-banner-second__img ibg">
+                    <img src="img/photo/home-banner-second-img-1.jpg" alt="">
+                </div>
+                <div class="home-banner-second__title">Ready.</div>
+            </div>
+            <div class="swiper-slide">
+                <div class="home-banner-second__img ibg">
+                    <img src="img/photo/home-banner-second-img-2.jpg" alt="">
+                </div>
+                <div class="home-banner-second__title">Set.</div>
+            </div>
+            <div class="swiper-slide">
+                <div class="home-banner-second__img ibg">
+                    <img src="img/photo/home-banner-second-img-3.jpg" alt="">
+                </div>
+                <div class="home-banner-second__title">
+                    Go.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+				</div>
+			</div>
+
+			<div class="padding-wrap padding-wrap--lg">
+				<div class="container">
+					<div class="home-banner-third">
+						<div class="home-banner-third__inner">
+							<div class="home-banner-third__shadow">
+								<img src="img/photo/shadow-xl.png" alt="">
+							</div>
+							<div class="home-banner-third__num">2022</div>
+							<div class="home-banner-third__body">
+								<div class="home-banner-third__img ibg">
+									<img src="img/photo/home-banner-third-img.jpg" alt="">
+								</div>
+								<h2 class="home-banner-third__title title-1">
+									Learn. Explore.
+								</h2>
+								<div class="home-banner-third__group">
+									<div class="home-banner-third__text text-fluid">
+										The rear view is in the past.
+										Forge ahead.
+									</div>
+									<a href="#" class="home-banner-third__btn btn-default btn-default--border-gradient">
+										Learn more
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="padding-wrap padding-wrap--lg">
+				<section class="testimonials">
+    <div class="testimonials__bg ibg">
+        <picture>
+            <source srcset="img/photo/testimonials-bg.png" media="(min-width: 768px)" >
+            <img  src="img/photo/testimonials-bg-mob.png" alt="img">
+        </picture>
+    </div>
+    <div class="testimonials__body container">
+        <div class="testimonials__head">
+            <h3 class="testimonials__title title-4">
+                I am very confident in the system that
+                I have put in place.
+            </h3>
+            <div class="testimonials__text text-xl">
+                <p>
+                    I care about my students, and am steadfast in my desire to develop better, safer drivers. That is
+                    why I reconnect with my students, several months after they’ve gone solo, to see how they’re going.
+                </p>
+                <p>
+                    That’s the GDS difference.
+                </p>
+            </div>
+        </div>
+        <div class="testimonials__slider swiper" data-slider="testimonials-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="testimonial">
+                        <div class="testimonial__img ibg">
+                            <img src="img/photo/testimonial-img-1.jpg" alt="">
+                        </div>
+                        <div class="testimonial__inner">
+                            <div class="testimonial__name">Gennady Vinokur</div>
+                            <div class="testimonial__text text-md">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu nisl consequat dignissim consectetur id morbi enim dictum. Lacus, nullam risus integer gravida lobortis neque, malesuada. Consectetur aliquet viverra a tempor, curabitur condimentum in sit adipiscing.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="testimonial">
+                        <div class="testimonial__img ibg">
+                            <img src="img/photo/testimonial-img-2.jpg" alt="">
+                        </div>
+                        <div class="testimonial__inner">
+                            <div class="testimonial__name">John Smiths</div>
+                            <div class="testimonial__text text-md">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu nisl consequat dignissim consectetur id morbi enim dictum. Lacus, nullam risus integer gravida lobortis neque, malesuada. Consectetur aliquet viverra a tempor, curabitur condimentum in sit adipiscing. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="testimonial">
+                        <div class="testimonial__img ibg">
+                            <img src="img/photo/testimonial-img-1.jpg" alt="">
+                        </div>
+                        <div class="testimonial__inner">
+                            <div class="testimonial__name">Gennady Vinokur</div>
+                            <div class="testimonial__text text-md">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu nisl consequat dignissim consectetur id morbi enim dictum. Lacus, nullam risus integer gravida lobortis neque, malesuada. Consectetur aliquet viverra a tempor, curabitur condimentum in sit adipiscing.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="testimonial">
+                        <div class="testimonial__img ibg">
+                            <img src="img/photo/testimonial-img-2.jpg" alt="">
+                        </div>
+                        <div class="testimonial__inner">
+                            <div class="testimonial__name">John Smiths</div>
+                            <div class="testimonial__text text-md">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eu nisl consequat dignissim consectetur id morbi enim dictum. Lacus, nullam risus integer gravida lobortis neque, malesuada. Consectetur aliquet viverra a tempor, curabitur condimentum in sit adipiscing.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-buttons">
+    <div class="slider-button slider-button--prev hover" data-action="btn-prev">
+        <i class="icon-arrow-left"></i>
+    </div>
+    <div class="slider-button slider-button--next hover" data-action="btn-next">
+        <i class="icon-arrow-right"></i>
+    </div>
+</div>
+        </div>
+    </div>
+</section>
+			</div>
+
+			<div class="padding-wrap padding-wrap--lg">
+				<div class="container">
+					<section class="cta">
+						<div class="cta__shadow">
+							<img src="img/photo/shadow-lg.png" alt="">
+						</div>
+						<div class="cta__body">
+							<h2 class="cta__title title-1">
+								Let’s connect
+							</h2>
+							<div class="cta__text text-xl">
+								Leave your message below and we will get in touch with you as soon as possible.
+							</div>
+							<form action="/">
+								<div class="cta__form form">
+									<div class="form__items">
+										<div class="form__item">
+											<input type="text" class="input" placeholder="NAME">
+										</div>
+										<div class="form__item">
+											<input type="text" class="input" placeholder="E&hyphen;MAIL">
+										</div>
+										<div class="form__item">
+											<textarea class="textarea" placeholder="YOUR MESSAGE"></textarea>
+										</div>
+									</div>
+									<button type="submit" class="form__submit btn-default btn-default--ligth">
+										Send
+									</button>
+								</div>
+							</form>
+						</div>
+					</section>
+				</div>
+			</div>
+
+			<div class="padding-wrap padding-wrap--md">
+				<div class="map" id="map"></div>
+				<script>
+					function initMap() {
+
+						map = new google.maps.Map(document.getElementById('map'), {
+							center: { lat: -37.80966645381118, lng: 144.95836254115005 },
+
+							zoom: 9,
+
+							styles: [
+								{
+									"elementType": "geometry",
+									"stylers": [
+										{
+											"color": "#212121"
+										}
+									]
+								},
+								{
+									"elementType": "labels.icon",
+									"stylers": [
+										{
+											"visibility": "off"
+										}
+									]
+								},
+								{
+									"elementType": "labels.text.fill",
+									"stylers": [
+										{
+											"color": "#757575"
+										}
+									]
+								},
+								{
+									"elementType": "labels.text.stroke",
+									"stylers": [
+										{
+											"color": "#212121"
+										}
+									]
+								},
+								{
+									"featureType": "administrative",
+									"elementType": "geometry",
+									"stylers": [
+										{
+											"color": "#757575"
+										}
+									]
+								},
+								{
+									"featureType": "administrative.country",
+									"elementType": "labels.text.fill",
+									"stylers": [
+										{
+											"color": "#9e9e9e"
+										}
+									]
+								},
+								{
+									"featureType": "administrative.land_parcel",
+									"stylers": [
+										{
+											"visibility": "off"
+										}
+									]
+								},
+								{
+									"featureType": "administrative.locality",
+									"elementType": "labels.text.fill",
+									"stylers": [
+										{
+											"color": "#bdbdbd"
+										}
+									]
+								},
+								{
+									"featureType": "poi",
+									"elementType": "labels.text.fill",
+									"stylers": [
+										{
+											"color": "#757575"
+										}
+									]
+								},
+								{
+									"featureType": "poi.park",
+									"elementType": "geometry",
+									"stylers": [
+										{
+											"color": "#181818"
+										}
+									]
+								},
+								{
+									"featureType": "poi.park",
+									"elementType": "labels.text.fill",
+									"stylers": [
+										{
+											"color": "#616161"
+										}
+									]
+								},
+								{
+									"featureType": "poi.park",
+									"elementType": "labels.text.stroke",
+									"stylers": [
+										{
+											"color": "#1b1b1b"
+										}
+									]
+								},
+								{
+									"featureType": "road",
+									"elementType": "geometry.fill",
+									"stylers": [
+										{
+											"color": "#2c2c2c"
+										}
+									]
+								},
+								{
+									"featureType": "road",
+									"elementType": "labels.text.fill",
+									"stylers": [
+										{
+											"color": "#8a8a8a"
+										}
+									]
+								},
+								{
+									"featureType": "road.arterial",
+									"elementType": "geometry",
+									"stylers": [
+										{
+											"color": "#373737"
+										}
+									]
+								},
+								{
+									"featureType": "road.highway",
+									"elementType": "geometry",
+									"stylers": [
+										{
+											"color": "#3c3c3c"
+										}
+									]
+								},
+								{
+									"featureType": "road.highway.controlled_access",
+									"elementType": "geometry",
+									"stylers": [
+										{
+											"color": "#4e4e4e"
+										}
+									]
+								},
+								{
+									"featureType": "road.local",
+									"elementType": "labels.text.fill",
+									"stylers": [
+										{
+											"color": "#616161"
+										}
+									]
+								},
+								{
+									"featureType": "transit",
+									"elementType": "labels.text.fill",
+									"stylers": [
+										{
+											"color": "#757575"
+										}
+									]
+								},
+								{
+									"featureType": "water",
+									"elementType": "geometry",
+									"stylers": [
+										{
+											"color": "#000000"
+										}
+									]
+								},
+								{
+									"featureType": "water",
+									"elementType": "geometry.fill",
+									"stylers": [
+										{
+											"color": "#0f1010"
+										}
+									]
+								},
+								{
+									"featureType": "water",
+									"elementType": "labels.text.fill",
+									"stylers": [
+										{
+											"color": "#3d3d3d"
+										}
+									]
+								}
+							]
+						});
+
+						// var marker = new google.maps.Marker({
+
+						//     position: { lat: markerPosition.lat, lng: markerPosition.lng },
+
+						//     map: map,
+
+						//     title: '',
+						//     label: '',
+
+						//     // icon: 'img/contact/googlMarker.svg',
+						// });
+
+					}
+				</script>
+			</div>
+
+		</main>
+
+		<!-- == FOOTER ================== -->
+		<footer class="footer">
+    <div class="container">
+        <div class="footer__row-1">
+            <div class="footer__col">
+                <div class="footer__logo">
+                    <a href="#">
+                        <img src="img/logo/logo.png" alt="">
+                    </a>
+                </div>
+                <ul class="social">
+                    <li>
+                        <a href="#">
+                            <i class="icon-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="icon-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="icon-twitter"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <ul class="footer__nav">
+                    <li>
+                        <a href="#">About us</a>
+                    </li>
+                    <li>
+                        <a href="#">booking</a>
+                    </li>
+                    <li>
+                        <a href="#">pricing</a>
+                    </li>
+                    <li>
+                        <a href="#">contact us</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <a href="#" class="footer__link">
+                    <i class="icon-phone"></i>
+                    0404 202 000
+                </a>
+                <a href="#" class="footer__link">
+                    <i class="icon-email"></i>
+                    gennadys.driving@gmail.com
+                </a>
+            </div>
+        </div>
+        <div class="footer__row-2">
+            <div class="footer__desine-made text-xl">
+                Website design made with ❤️ in 🇺🇦
+            </div>
+        </div>
+    </div>
+    <div class="footer__row-3">
+        <div class="container d-flex align-items-center">
+            <svg class="me-3" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M11 20.5268C16.5228 20.5268 21 16.1311 21 10.7087C21 5.28633 16.5228 0.890625 11 0.890625C5.47715 0.890625 1 5.28633 1 10.7087C1 16.1311 5.47715 20.5268 11 20.5268Z"
+                    stroke="#8B8B8B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                    d="M14.2004 8.74667C14.2004 8.74667 13.0004 7.17578 11.0004 7.17578C9.00039 7.17578 7.40039 8.74667 7.40039 10.7103C7.40039 12.6739 9.00039 14.2448 11.0004 14.2448C13.0004 14.2448 14.2004 12.6739 14.2004 12.6739"
+                    stroke="#8B8B8B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            GDS 2022. All rights reserved.
+        </div>
+    </div>
+</footer>
+		<!-- == // FOOTER ================== -->
+	</div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/jQueryScripts.min.js"></script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q82l2QjSzJJk1uUW3OzUBGPTlbk8w1g&amp;callback=initMap&amp;libraries=&amp;v=weekly"
+		defer=""></script>
+</body>
+
+</html>

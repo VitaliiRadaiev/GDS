@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title": "GDS"
+})
+
+<body>
+	<div class="_preload-body"></div>
+	<div class="main-wrapper">
+		<!-- == HEADER ================== -->
+		@@include('common/header/_header.html',{
+		"mod": ""
+		})
+		<!-- == // HEADER ================== -->
+
+		<main class="_page home-page">
+			<div class="padding-wrap padding-wrap--lg pt-0">
+				@@include('common/promo-header/_promo-header.html')
+			</div>
+
+			<div class="padding-wrap padding-wrap--lg">
+				<div class="container">
+					<div class="home-banner">
+						<div class="home-banner__col-1">
+							<div class="home-banner__row home-banner__row-1">
+								<h2 class="home-banner__title title-4">
+									At GDS we do things <span>differently</span>.
+								</h2>
+							</div>
+							<div class="home-banner__row home-banner__row-2">
+								<a href="#" class="home-banner__btn btn-default btn-default--border-gradient">
+									Learn more
+								</a>
+							</div>
+							<div class="home-banner__row home-banner__row-3">
+								<div class="home-banner__text text-fluid">
+									A lot of thought has gone into making the program well-structured and efficient.
+								</div>
+							</div>
+						</div>
+						<div class="home-banner__col-2">
+							<div class="home-banner__img ibg" data-da=".home-banner__row-3,767.98,last">
+								<img src="img/photo/home-banner-img.jpg" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="padding-wrap padding-wrap--lg">
+				<div class="container">
+					<div class="text-banner">
+						<div class="text-banner__shadow">
+							<img src="img/photo/shadow.png" alt="">
+						</div>
+						<div class="text-banner__body">
+							<div class="text-banner__row-1">
+								<div class="text-banner__big-text">Drive</div>
+								<div class="text-banner__text text-xl" data-da=".text-banner__row-5,767.98,last">
+									GDS strives hard to continuously improve its systems and teaching program to produce
+									the most knowledgeable and skilled probationary drivers.
+								</div>
+							</div>
+							<div class="text-banner__row-2">
+								<div class="text-banner__big-text">
+									like you’ve been
+								</div>
+							</div>
+							<div class="text-banner__row-3">
+								<div class="text-banner__big-text text-gradient">
+									driving
+								</div>
+							</div>
+							<div class="text-banner__row-4">
+								<div class="text-banner__text text-xl" data-da=".text-banner__row-5,767.98,first">
+									We aim for a lot more than a drive test pass.
+								</div>
+								<div class="text-banner__big-text">for years</div>
+							</div>
+							<div class="text-banner__row-5"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="padding-wrap padding-wrap--lg">
+				<div class="container">
+					@@include('common/home-banner-second/_home-banner-second.html')
+				</div>
+			</div>
+
+			<div class="padding-wrap padding-wrap--lg">
+				<div class="container">
+					<div class="home-banner-third">
+						<div class="home-banner-third__inner">
+							<div class="home-banner-third__shadow">
+								<img src="img/photo/shadow-xl.png" alt="">
+							</div>
+							<div class="home-banner-third__num">2022</div>
+							<div class="home-banner-third__body">
+								<div class="home-banner-third__img ibg">
+									<img src="img/photo/home-banner-third-img.jpg" alt="">
+								</div>
+								<h2 class="home-banner-third__title title-1">
+									Learn. Explore.
+								</h2>
+								<div class="home-banner-third__group">
+									<div class="home-banner-third__text text-fluid">
+										The rear view is in the past.
+										Forge ahead.
+									</div>
+									<a href="#" class="home-banner-third__btn btn-default btn-default--border-gradient">
+										Learn more
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="padding-wrap padding-wrap--lg">
+				@@include('common/testimonials/_testimonials.html')
+			</div>
+
+			<div class="padding-wrap padding-wrap--lg">
+				<div class="container">
+					<section class="cta">
+						<div class="cta__shadow">
+							<img src="img/photo/shadow-lg.png" alt="">
+						</div>
+						<div class="cta__body">
+							<h2 class="cta__title title-1">
+								Let’s connect
+							</h2>
+							<div class="cta__text text-xl">
+								Leave your message below and we will get in touch with you as soon as possible.
+							</div>
+							<form action="/">
+								<div class="cta__form form">
+									<div class="form__items">
+										<div class="form__item">
+											<input type="text" class="input" placeholder="NAME">
+										</div>
+										<div class="form__item">
+											<input type="text" class="input" placeholder="E&hyphen;MAIL">
+										</div>
+										<div class="form__item">
+											<textarea class="textarea" placeholder="YOUR MESSAGE"></textarea>
+										</div>
+									</div>
+									<button type="submit" class="form__submit btn-default btn-default--ligth">
+										Send
+									</button>
+								</div>
+							</form>
+						</div>
+					</section>
+				</div>
+			</div>
+
+			<div class="padding-wrap padding-wrap--md">
+				<div class="map" id="map"></div>
+				<script>
+					function initMap() {
+
+						map = new google.maps.Map(document.getElementById('map'), {
+							center: { lat: -37.80966645381118, lng: 144.95836254115005 },
+
+							zoom: 9,
+
+							styles: [
+								{
+									"elementType": "geometry",
+									"stylers": [
+										{
+											"color": "#212121"
+										}
+									]
+								},
+								{
+									"elementType": "labels.icon",
+									"stylers": [
+										{
+											"visibility": "off"
+										}
+									]
+								},
+								{
+									"elementType": "labels.text.fill",
+									"stylers": [
+										{
+											"color": "#757575"
+										}
+									]
+								},
+								{
+									"elementType": "labels.text.stroke",
+									"stylers": [
+										{
+											"color": "#212121"
+										}
+									]
+								},
+								{
+									"featureType": "administrative",
+									"elementType": "geometry",
+									"stylers": [
+										{
+											"color": "#757575"
+										}
+									]
+								},
+								{
+									"featureType": "administrative.country",
+									"elementType": "labels.text.fill",
+									"stylers": [
+										{
+											"color": "#9e9e9e"
+										}
+									]
+								},
+								{
+									"featureType": "administrative.land_parcel",
+									"stylers": [
+										{
+											"visibility": "off"
+										}
+									]
+								},
+								{
+									"featureType": "administrative.locality",
+									"elementType": "labels.text.fill",
+									"stylers": [
+										{
+											"color": "#bdbdbd"
+										}
+									]
+								},
+								{
+									"featureType": "poi",
+									"elementType": "labels.text.fill",
+									"stylers": [
+										{
+											"color": "#757575"
+										}
+									]
+								},
+								{
+									"featureType": "poi.park",
+									"elementType": "geometry",
+									"stylers": [
+										{
+											"color": "#181818"
+										}
+									]
+								},
+								{
+									"featureType": "poi.park",
+									"elementType": "labels.text.fill",
+									"stylers": [
+										{
+											"color": "#616161"
+										}
+									]
+								},
+								{
+									"featureType": "poi.park",
+									"elementType": "labels.text.stroke",
+									"stylers": [
+										{
+											"color": "#1b1b1b"
+										}
+									]
+								},
+								{
+									"featureType": "road",
+									"elementType": "geometry.fill",
+									"stylers": [
+										{
+											"color": "#2c2c2c"
+										}
+									]
+								},
+								{
+									"featureType": "road",
+									"elementType": "labels.text.fill",
+									"stylers": [
+										{
+											"color": "#8a8a8a"
+										}
+									]
+								},
+								{
+									"featureType": "road.arterial",
+									"elementType": "geometry",
+									"stylers": [
+										{
+											"color": "#373737"
+										}
+									]
+								},
+								{
+									"featureType": "road.highway",
+									"elementType": "geometry",
+									"stylers": [
+										{
+											"color": "#3c3c3c"
+										}
+									]
+								},
+								{
+									"featureType": "road.highway.controlled_access",
+									"elementType": "geometry",
+									"stylers": [
+										{
+											"color": "#4e4e4e"
+										}
+									]
+								},
+								{
+									"featureType": "road.local",
+									"elementType": "labels.text.fill",
+									"stylers": [
+										{
+											"color": "#616161"
+										}
+									]
+								},
+								{
+									"featureType": "transit",
+									"elementType": "labels.text.fill",
+									"stylers": [
+										{
+											"color": "#757575"
+										}
+									]
+								},
+								{
+									"featureType": "water",
+									"elementType": "geometry",
+									"stylers": [
+										{
+											"color": "#000000"
+										}
+									]
+								},
+								{
+									"featureType": "water",
+									"elementType": "geometry.fill",
+									"stylers": [
+										{
+											"color": "#0f1010"
+										}
+									]
+								},
+								{
+									"featureType": "water",
+									"elementType": "labels.text.fill",
+									"stylers": [
+										{
+											"color": "#3d3d3d"
+										}
+									]
+								}
+							]
+						});
+
+						// var marker = new google.maps.Marker({
+
+						//     position: { lat: markerPosition.lat, lng: markerPosition.lng },
+
+						//     map: map,
+
+						//     title: '',
+						//     label: '',
+
+						//     // icon: 'img/contact/googlMarker.svg',
+						// });
+
+					}
+				</script>
+			</div>
+
+		</main>
+
+		<!-- == FOOTER ================== -->
+		@@include('common/footer/_footer.html',{})
+		<!-- == // FOOTER ================== -->
+	</div>
+
+	@@include('_js-bottom.html',{})
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q82l2QjSzJJk1uUW3OzUBGPTlbk8w1g&amp;callback=initMap&amp;libraries=&amp;v=weekly"
+		defer=""></script>
+</body>
+
+</html>

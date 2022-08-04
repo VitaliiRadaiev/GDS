@@ -1,0 +1,39 @@
+.slider-buttons {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+
+    @media (max-width: $md3+px) {
+        gap: 15px;
+    }
+}
+.slider-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5.6rem;
+    transition: all .3s ease;
+
+    @media (max-width: $md3+px) {
+        font-size: 33px;
+    }
+
+    @media (min-width: 992px) {
+        &:hover {
+            color: $mainColor;
+        }
+    }
+
+    &.swiper-button-disabled {
+        color: #464646 !important;
+        pointer-events: none;
+    }
+
+    &--prev {
+
+    }
+
+    &--next {
+
+    }
+}
