@@ -1,72 +1,16 @@
 @font-face {
-  font-family: "Rosales";
+  font-family: "GRIFTERBold";
   font-display: swap;
-  src: url("../fonts/FONTSPRINGDEMO-RosalesBoldRegular.woff") format("woff"), url("../fonts/FONTSPRINGDEMO-RosalesBoldRegular.woff2") format("woff2");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Rosales";
-  font-display: swap;
-  src: url("../fonts/FONTSPRINGDEMO-RosalesBookRegular.woff") format("woff"), url("../fonts/FONTSPRINGDEMO-RosalesBookRegular.woff2") format("woff2");
+  src: url("../fonts/GRIFTERBold.woff") format("woff"), url("../fonts/GRIFTERBold.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Rosales";
+  font-family: "rosales";
   font-display: swap;
-  src: url("../fonts/FONTSPRINGDEMO-RosalesExtraBoldRegular.woff") format("woff"), url("../fonts/FONTSPRINGDEMO-RosalesExtraBoldRegular.woff2") format("woff2");
-  font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Rosales";
-  font-display: swap;
-  src: url("../fonts/FONTSPRINGDEMO-RosalesExtraLightRegular.woff") format("woff"), url("../fonts/FONTSPRINGDEMO-RosalesExtraLightRegular.woff2") format("woff2");
-  font-weight: 200;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Rosales";
-  font-display: swap;
-  src: url("../fonts/FONTSPRINGDEMO-RosalesLightRegular.woff") format("woff"), url("../fonts/FONTSPRINGDEMO-RosalesLightRegular.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Rosales";
-  font-display: swap;
-  src: url("../fonts/FONTSPRINGDEMO-RosalesMediumRegular.woff") format("woff"), url("../fonts/FONTSPRINGDEMO-RosalesMediumRegular.woff2") format("woff2");
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Rosales";
-  font-display: swap;
-  src: url("../fonts/FONTSPRINGDEMO-RosalesRegular.woff") format("woff"), url("../fonts/FONTSPRINGDEMO-RosalesRegular.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Rosales";
-  font-display: swap;
-  src: url("../fonts/FONTSPRINGDEMO-RosalesThinRegular.woff") format("woff"), url("../fonts/FONTSPRINGDEMO-RosalesThinRegular.woff2") format("woff2");
-  font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "GRIFTERBold";
-  font-display: swap;
-  src: url("../fonts/GRIFTERBold.woff") format("woff"), url("../fonts/GRIFTERBold.woff2") format("woff2");
-  font-weight: 700;
+  src: url("../fonts/rosales-book-webfont.woff") format("woff"), url("../fonts/rosales-book-webfont.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -1501,7 +1445,7 @@ body {
 body {
   --text-color: #fff;
   line-height: 1;
-  font-family: "Rosales", sans-serif;
+  font-family: "rosales", sans-serif;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -1535,7 +1479,7 @@ body:not(.mobile) a:not(.not-hover):hover {
 input,
 button,
 textarea {
-  font-family: "Rosales", sans-serif;
+  font-family: "rosales", sans-serif;
 }
 
 input::-ms-clear {
