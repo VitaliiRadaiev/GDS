@@ -175,6 +175,10 @@
                 -webkit-text-stroke-width: 1px;
                 white-space: nowrap;
             }
+
+            @media (max-width: 374.98px) {
+                font-size: 30px;
+            }
         }
     }
 

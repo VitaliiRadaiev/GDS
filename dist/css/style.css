@@ -2571,6 +2571,14 @@ figure {
   bottom: 7rem;
 }
 
+.testimonials__slider--one-slide .slider-buttons {
+  display: none;
+}
+
+.testimonials__slider--one-slide .swiper-wrapper {
+  margin-bottom: 0 !important;
+}
+
 .testimonial__img {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
@@ -3217,6 +3225,10 @@ figure {
     padding: 3.2rem 0;
   }
 
+  .testimonials__slider--one-slide .testimonial__inner {
+    padding-bottom: 4rem;
+  }
+
   .testimonial {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3804,5 +3816,11 @@ figure {
 
   .map {
     height: 216px;
+  }
+}
+
+@media (max-width: 374.98px) {
+  .text-banner__row-2 .text-banner__big-text {
+    font-size: 30px;
   }
 }

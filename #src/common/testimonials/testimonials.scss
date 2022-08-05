@@ -85,6 +85,21 @@
                 position: static;
             }
         }
+
+        &--one-slide {
+            & .testimonial__inner {
+                @media (min-width: 768px) {
+                    padding-bottom: 4rem;
+                }
+            }
+            & .slider-buttons {
+                display: none;
+            }
+
+            & .swiper-wrapper {
+                margin-bottom: 0 !important;
+            }
+        }
     }
 }
 
