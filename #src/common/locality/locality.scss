@@ -1,0 +1,188 @@
+.locality {
+    position: relative;
+    &__icon {
+        font-size: 5.8rem;
+        margin-bottom: 3.4rem;
+
+        @media (max-width: $md3+px) {
+            font-size: 38px;
+            margin-bottom: 19px;
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 5rem;
+        line-height: 1.5em;
+        letter-spacing: 0.05em;
+        max-width: 48rem;
+        margin-bottom: 3rem;
+
+        @media (max-width: $md3+px) {
+            font-size: 25px;
+            line-height: 25px;
+            letter-spacing: 0.05em;
+            margin-bottom: 11px;
+        }
+    }
+
+    &__text {
+        max-width: 40.6rem;
+        margin-bottom: 6rem;
+
+        @media (max-width: $md3+px) {
+            max-width: 227px;
+            margin-bottom: 25px;
+        }
+
+        & > *:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 43.3rem;
+        height: 61.9rem;
+
+        @media (max-width: $md3+px) {
+            display: none;
+        }
+    }
+
+    &__list-wrap {
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width: $md3+px) {
+            display: none;
+        }
+    }
+
+    &__col-1 {
+        flex: 0 0 39.32%;
+    }
+
+    &__col-2 {
+        flex: 0 0 26.23%;
+        padding-top: 37rem;
+    }
+
+    &__col-3 {
+        flex: 0 0 22.48%;
+        padding-top: 37rem;
+    }
+
+    &__list {
+        padding-left: 0;
+        margin-bottom: 0;
+
+        & > li {
+            position: relative;
+            padding-left: 6rem;
+
+            @media (max-width: $md3+px) {
+                padding-left: 0;
+            }
+
+            @media (min-width: 768px) {
+                &:before {
+                    position: absolute;
+                    content: "";
+                    top: 1rem;
+                    left: 1rem;
+                    width: 1rem;
+                    height: 1rem;
+                    background-color: #fff;
+                    display: block;
+                    transform: rotate(45deg);
+                }
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 6.5rem;
+
+                @media (max-width: $md3+px) {
+                    margin-bottom: 25px;
+                }
+            }
+
+            & > *:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__list-title {
+        font-weight: 700;
+        font-size: 2.5rem;
+        line-height: 1.4em;
+        letter-spacing: 0.05em;
+        font-family: $titleFontFamily;
+        margin-bottom: 1rem;
+
+        @media (max-width: $md3+px) {
+            font-size: 18px;
+            line-height: 19px;
+            letter-spacing: 0.05em;
+            position: relative;
+            padding-left: 22px;
+
+            &:before {
+                position: absolute;
+                content: "";
+                top: 4px;
+                left: 0rem;
+                width: 1rem;
+                height: 1rem;
+                background-color: #fff;
+                display: block;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    &__list-text {
+        font-size: 2rem;
+        line-height: 1.45em;
+        position: relative;
+        padding-left: 1.6rem;
+
+        @media (max-width: $md3+px) {
+            font-size: 14px;
+            line-height: 22px;
+            letter-spacing: 0.05em;
+        }
+
+        &:before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background-color: $borderColor;
+        }
+    }
+
+    &__list--mob {
+        @media (min-width: 768px) {
+            display: none;
+        }
+        margin-bottom: 32px;
+    }
+
+    &__view-all {
+        @media (min-width: 768px) {
+            display: none;
+        }
+
+        font-size: 22px;
+        line-height: 22px;
+        text-decoration-line: underline;
+        color: #fff !important;
+        padding: 0;
+    }
+}

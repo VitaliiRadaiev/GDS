@@ -102,6 +102,7 @@
         bottom: 0;
         width: 96rem;
         transform: translate(50%, 35%);
+        pointer-events: none;
 
         @media (max-width: $md3+px) {
             bottom: auto;
@@ -271,6 +272,7 @@
         left: 0;
         transform: translate(-50%, -50%);
         width: 165rem;
+        pointer-events: none;
 
         @media (max-width: $md3+px) {
             width: 500px;
@@ -364,6 +366,7 @@
         left: 50%;
         transform: translate(-50%, -35%);
         width: 149rem;
+        pointer-events: none;
 
         @media (max-width: $md3+px) {
             width: 800px;

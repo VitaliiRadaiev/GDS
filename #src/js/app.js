@@ -230,10 +230,11 @@ class App {
 	beforeunload() {
 		@@include('../common/header/header.js')
 		@@include('../common/buttons/buttons.js')
+		@@include('../common/locality/locality.js')
 	}
 
 	afterLoad() {
-
+		
 	}
 }
 
