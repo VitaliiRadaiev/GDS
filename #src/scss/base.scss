@@ -280,6 +280,7 @@ figure {
 
 	@media (max-width: $md2+px) {
 		width: calc(100% - 64px);
+		max-width: none !important;
 	}
 	@media (max-width: $md3+px) {
 		width: calc(100% - 40px);
@@ -298,6 +299,7 @@ figure {
 
 	@media (max-width: $md2+px) {
 		width: calc(100% - 64px);
+		max-width: none !important;
 	}
 	@media (max-width: $md3+px) {
 		width: calc(100% - 40px);

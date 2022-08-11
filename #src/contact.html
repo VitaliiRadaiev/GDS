@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title": "GDS"
+})
+
+<body class="bg--second-mob">
+    <div class="_preload-body"></div>
+    <div class="main-wrapper">
+        <!-- == HEADER ================== -->
+        @@include('common/header/_header.html',{
+        "mod": "d-md-none"
+        })
+        <!-- == // HEADER ================== -->
+
+        <main class="_page contact-page">
+            <div class="padding-wrap pt-0">
+                <section class="contact ">
+
+                    <div class="contact__body container">
+                        <div class="contact__img ibg">
+                            <img src="img/photo/contact-img.jpg" alt="">
+                        </div>
+                        <div class="contact__inner">
+                            <div class="contact__nav">
+                                <ul class="header__nav-list">
+                                    <li>
+                                        <a href="#">About us</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Pricing</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">FAQs</a>
+                                    </li>
+                                </ul>
+
+                                <div class="header__logo">
+                                    <a href="#">
+                                        <img src="img/logo/logo.png" alt="">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="contact__head">
+                                <h1 class="contact__title title-4 text-gradient">
+                                    Contact
+                                </h1>
+                                <div class="contact__text text">
+                                    Feel free to contact us and we will get back to your as soon as possible.
+                                </div>
+                            </div>
+                            <div class="contact__main">
+                                <div class="contact__main-col">
+                                    <div class="contact__title-2">Info</div>
+                                    <a href="#" class="contact__link">
+                                        <i class="icon-phone"></i>
+                                        0404 202 000
+                                    </a>
+                                    <a href="#" class="contact__link">
+                                        <i class="icon-email"></i>
+                                        gennadys.driving@gmail.com
+                                    </a>
+                                </div>
+                                <div class="contact__main-col">
+                                    <div class="contact__title-2">
+                                        Get in touch
+                                    </div>
+                                    <form action="/">
+                                        <div class="contact__form form">
+                                            <div class="form__items">
+                                                <div class="form__item">
+                                                    <input type="text" class="input" placeholder="Name">
+                                                </div>
+                                                <div class="form__item">
+                                                    <input type="text" class="input" placeholder="E-mail">
+                                                </div>
+                                                <div class="form__item">
+                                                    <textarea class="textarea" placeholder="Your message"></textarea>
+                                                </div>
+                                            </div>
+                                            <button type="submit"
+                                                class="form__submit btn-default btn-default--gradient">
+                                                Send
+                                            </button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- == FOOTER ================== -->
+        @@include('common/footer/_footer.html',{})
+        <!-- == // FOOTER ================== -->
+    </div>
+
+    @@include('_js-bottom.html',{})
+</body>
+
+</html>
