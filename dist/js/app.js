@@ -380,7 +380,7 @@ class App {
 
 
 		window.addEventListener('load', () => {
-			this.setPaddingTopHeaderSize();
+			//this.setPaddingTopHeaderSize();
 			this.afterLoad();
 		});
 
@@ -771,7 +771,7 @@ window.popup = {
 				let id = setInterval(setPedding, 200);
 				setTimeout(() => {
 					clearInterval(id);
-				}, 2000)
+				}, 600)
 				window.addEventListener('resize', setPedding);
 			}
 

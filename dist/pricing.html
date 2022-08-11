@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>GDS</title>
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		body.page-is-load ._preload-body {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		body.page-is-load ._preload-body:before {
+			display: none;
+		}
+
+		.mouse-dot {
+			font-size: 10px;
+			height: 2em;
+			width: 2em;
+			transition: transform, background-color, height, width .3s ease;
+			position: absolute;
+			z-index: 99999;
+			border-radius: 50%;
+			background-color: #222222;
+			transform: translate(-50%, -50%) scale(1);
+			pointer-events: none;
+			left: -30px;
+			top: -30px;
+			box-shadow: 0 0 15px rgba(243, 241, 239, 0.4);
+		}
+
+		.mouse-dot.hide {
+			transform: translate(-50%, -50%) scale(0);
+		}
+
+		.mouse-dot.hover {
+
+		}
+
+		._preload-body {
+			background-color: #fff;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 999;
+			transition: all .6s ease .2s;
+		}
+
+		._preload-body:before {
+			position: absolute;
+			content: '';
+			z-index: 999;
+			top: 50%;
+			left: 50%;
+			height: 50px;
+			width: 50px;
+			border-radius: 50%;
+			border: 4px solid #6e6e6e;
+			border-right: 4px solid #fff;
+			transform: translate(-50%, -50%);
+			animation: preloadBody 2s linear infinite;
+		}
+
+		@keyframes preloadBody {
+			from {
+				transform: translate(-50%, -50%) rotate(0);
+			}
+
+			to {
+				transform: translate(-50%, -50%) rotate(360deg);
+			}
+		}
+	</style>
+	
+<script src="js/vendors.js"></script>
+<script src="js/app.js"></script>
+<!-- <script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q82l2QjSzJJk1uUW3OzUBGPTlbk8w1g&callback=initMap&libraries=&v=weekly"
+defer
+></script> -->
+</head>
+
+<body class="bg--second-mob ">
+    <div class="_preload-body"></div>
+    <div class="main-wrapper">
+        <!-- == HEADER ================== -->
+        <header class="header " data-header data-popup="add-right-padding">
+    <div class="container">
+        <div class="header__body">
+            <div class="header__logo">
+                <a href="#">
+                    <img src="img/logo/logo.png" alt="">
+                </a>
+            </div>
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li>
+                        <a href="#">About us</a>
+                    </li>
+                    <li>
+                        <a href="#">Pricing</a>
+                    </li>
+                    <li>
+                        <a href="#">FAQs</a>
+                    </li>
+                </ul>
+            </nav>
+            <a href="#" class="header__link">
+                CONTACT US
+            </a>
+            <button class="header__burger" data-action="open-mob-menu">
+                <img class="img-svg" src="img/icons/burger.svg" alt="">
+            </button>
+        </div>
+    </div>
+</header>
+
+<div class="mobile-menu" data-mob-menu >
+    <div class="mobile-menu__head">
+        <div class="mobile-menu__logo">
+            <a href="#">
+                <img src="img/logo/logo.png" alt="">
+            </a>
+        </div>
+        <button class="mobile-menu__close" data-action="close-mob-menu"><span></span></button>
+    </div>
+    <div class="mobile-menu__scroll-wrap">
+        <a href="#" class="mobile-menu__link">
+            CONTACT US
+        </a>
+        <ul class="mobile-menu__nav">
+            <li>
+                <a href="#">About us</a>
+            </li>
+            <li>
+                <a href="#">Pricing</a>
+            </li>
+            <li>
+                <a href="#">FAQs</a>
+            </li>
+        </ul>
+    </div>
+</div>
+        <!-- == // HEADER ================== -->
+
+        <main class="_page pricing-page">
+            <section class="pricing-options" data-padding-top-header-size>
+                <div class="pricing-options__inner">
+                    <div class="pricing-options__bg">
+                        <img src="img/photo/shadow-md.png" alt="">
+                    </div>
+                    <div class="pricing-options__body container-sm">
+                        <h1 class="pricing-options__title title-5 text-center">
+                            Pricing Options
+                        </h1>
+                        <div class="pricing-options__text text-xl text-center">
+                            Select a package that works for you.
+                        </div>
+
+                        <ul class="pricing-options__list">
+                            <li>
+                                <div class="pricing-options-card text-md">
+                                    <div class="pricing-options-card__head">
+                                        <div class="pricing-options-card__icon">
+                                            <img src="img/photo/pricing-options-card-icon.png" alt="">
+                                        </div>
+                                        <div class="pricing-options-card__wrap">
+                                            <div class="pricing-options-card__title">4 lessons</div>
+                                            <div class="pricing-options-card__time">1 hour/ lesson</div>
+                                        </div>
+                                    </div>
+                                    <div class="pricing-options-card__body">
+                                        <div class="pricing-options-card__text">
+                                            Over 80 hours <br> driving practice
+                                        </div>
+                                        <div class="pricing-options-card__price">
+                                            $240
+                                        </div>
+                                        <a href="#"
+                                            class="pricing-options-card__btn btn-default btn-default--gradient">Book a
+                                            lesson</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pricing-options-card text-md">
+                                    <div class="pricing-options-card__head">
+                                        <div class="pricing-options-card__icon">
+                                            <img src="img/photo/pricing-options-card-icon.png" alt="">
+                                        </div>
+                                        <div class="pricing-options-card__wrap">
+
+                                            <div class="pricing-options-card__title">8 lessons</div>
+                                            <div class="pricing-options-card__time">1 hour/ lesson</div>
+                                        </div>
+                                    </div>
+                                    <div class="pricing-options-card__body">
+                                        <div class="pricing-options-card__text">
+                                            Between 20 - 70 <br> hours driving practice
+                                        </div>
+                                        <div class="pricing-options-card__price">
+                                            $464
+                                        </div>
+                                        <a href="#"
+                                            class="pricing-options-card__btn btn-default btn-default--gradient">Book a
+                                            lesson</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="pricing-options-card text-md">
+                                    <div class="pricing-options-card__head">
+                                        <div class="pricing-options-card__icon">
+                                            <img src="img/photo/pricing-options-card-icon.png" alt="">
+                                        </div>
+                                        <div class="pricing-options-card__wrap">
+
+                                            <div class="pricing-options-card__title">12 lessons</div>
+                                            <div class="pricing-options-card__time">1 hour/ lesson</div>
+                                        </div>
+                                    </div>
+                                    <div class="pricing-options-card__body">
+                                        <div class="pricing-options-card__text">
+                                            Between 0 - 20 <br>
+                                            hours driving practice
+                                        </div>
+                                        <div class="pricing-options-card__price">$672</div>
+                                        <a href="#"
+                                            class="pricing-options-card__btn btn-default btn-default--gradient">Book a
+                                            lesson</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                        <div class="pricing-options__bottom">
+                            <div class="pricing-options__bottom-col-1">
+                                <h2 class="pricing-options__title-2">
+                                    90 Minutes Lessons
+                                </h2>
+                                <div class="pricing-options__text text-xl">
+                                    For those who prefer longer lessons.
+                                </div>
+                            </div>
+                            <div class="pricing-options__bottom-col-2">
+                                <div class="pricing-options-card pricing-options-card--second text-md">
+                                    <div class="pricing-options-card__head">
+                                        <div class="pricing-options-card__icon">
+                                            <img src="img/photo/pricing-options-card-icon.png" alt="">
+                                        </div>
+                                        <div class="pricing-options-card__wrap">
+                                            <div class="pricing-options-card__title">6 lessons</div>
+                                            <div class="pricing-options-card__time">1,5 hour lessons</div>
+                                        </div>
+                                    </div>
+                                    <div class="pricing-options-card__body">
+                                        <div class="pricing-options-card__price">$504</div>
+                                        <a href="#"
+                                            class="pricing-options-card__btn btn-default btn-default--border-gradient">Book
+                                            a lesson</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="p-100"></div>
+
+            <div class="padding-wrap-md pt-0">
+                <div class="container-sm">
+                    <section class="instructor-test">
+                        <h2 class="instructor-test__title title-5 text-center">Instructor Test</h2>
+                        <div class="instructor-test__text text-xl text-center">Optional Add-On</div>
+                        <ul class="instructor-test__list">
+                            <li>
+                                <div class="instructor-test-card text-md">
+                                    <div class="instructor-test-card__head">
+                                        <div class="instructor-test-card__title">
+                                            Instructor Test (IT)
+                                        </div>
+                                        <div class="instructor-test-card__subtitle">
+                                            applies to new students
+                                        </div>
+                                    </div>
+                                    <div class="instructor-test-card__body ">
+                                        <div class="instructor-test-card__text text-content text-md">
+                                            <h6>It Includes:</h6>
+                                            <ul>
+                                                <li>
+                                                    use of the instruction vehicle to conduct your test in, i.e. the
+                                                    same vehicle used during lessons
+                                                </li>
+                                                <li>
+                                                    having myself (your instructor) present throughout your drive test
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="instructor-test-card__price">
+                                        $90
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="instructor-test-card text-md">
+                                    <div class="instructor-test-card__head">
+                                        <div class="instructor-test-card__title">
+                                            Instructor Re-Test (IRT)
+                                        </div>
+                                        <div class="instructor-test-card__subtitle">
+                                            applies to existing GDS students
+                                        </div>
+                                    </div>
+                                    <div class="instructor-test-card__body">
+                                        <div class="instructor-test-card__text text-content text-md">
+                                            <p>
+                                                In the unfortunate event that you are not successful on your first drive
+                                                test attempt, a cost of $75 will apply to each instructor re-test, if
+                                                you decide to utilize this option.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="instructor-test-card__price">
+                                        $75
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+
+            <div class="padding-wrap-md">
+                <div class="container-sm">
+                    <section class="note">
+                        <div class="note__borders"></div>
+                        <div class="note__body">
+                            <h3 class="note__title">
+                                NOTE!
+                            </h3>
+                            <ul class="note__list text-content text-lg">
+                                <li>
+                                    <p>
+                                        With every IT booking, the expectation is that you (my student) will meet me
+                                        at the VicRoads office, where your drive test is to be held, and make your own
+                                        way from the office at the conclusion of the test.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        If you require pick up from or drop off to a nearby railway station (or bus
+                                        stop) in order to make it to or from the VicRoads office, this something that I
+                                        am happy to accommodate, if notified beforehand.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        GDS handles IT payments separately from lesson charges, thus treating the two
+                                        services as independent of one another.
+                                        In saying this, an IT cannot be booked on its own. It needs to be accompanied by
+                                        a lesson package booking.
+                                        However, the situation is different for existing students of GDS, who do not
+                                        pass their initial drive test. Such students can book an IRT all on its own,
+                                        (without the need to attach a lesson package), if they are confident enough to
+                                        undertake a re-test without doing additional lessons.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        If a student pays for an IT and later changes their mind, e.g. decides that they
+                                        would prefer to use their own vehicle for the test, only two-thirds of the IT
+                                        cost will be refunded. As such, the refund will be $60 for a cancelled IT, with
+                                        one-third ($30) amounting to a cancellation fee.
+                                    </p>
+                                </li>
+                                <li>
+                                    <p>
+                                        Similarly, the refund for a cancelled IRT is $50, with one-third ($25) amounting
+                                        to a cancellation fee.
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <div class="padding-wrap-md">
+                <section class="working-process">
+                    <div class="working-process__bg ibg">
+                        <picture>
+                            <source srcset="img/photo/working-process-bg.png" media="(min-width: 768px)">
+                            <img src="img/photo/working-process-bg-mob.png" alt="img">
+                        </picture>
+                    </div>
+                    <div class="working-process__body container-sm">
+                        <div class="working-process__suptitle text-lg text-center">
+                            DISCOVER HOW IT WORKS
+                        </div>
+                        <h2 class="working-process__title title-5 text-center">
+                            Our Working Process
+                        </h2>
+                        <ul class="working-process__list">
+                            <li>
+                                <div class="working-process__list-icon">
+                                    <img src="img/photo/working-process-icon-1.png" alt="">
+                                </div>
+                                <div class="working-process__list-title">
+                                    THEORY
+                                </div>
+                            </li>
+                            <li>
+                                <div class="working-process__list-icon">
+                                    <img src="img/photo/working-process-icon-2.png" alt="">
+                                </div>
+                                <div class="working-process__list-title">
+                                    PRACTICE
+                                </div>
+                            </li>
+                            <li>
+                                <div class="working-process__list-icon">
+                                    <img src="img/photo/working-process-icon-3.png" alt="">
+                                </div>
+                                <div class="working-process__list-title">
+                                    REPETITION
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- == FOOTER ================== -->
+        <footer class="footer">
+    <div class="container">
+        <div class="footer__row-1">
+            <div class="footer__col">
+                <div class="footer__logo">
+                    <a href="#">
+                        <img src="img/logo/logo.png" alt="">
+                    </a>
+                </div>
+                <ul class="social">
+                    <li>
+                        <a href="#">
+                            <i class="icon-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="icon-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="icon-twitter"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <ul class="footer__nav">
+                    <li>
+                        <a href="#">About us</a>
+                    </li>
+                    <li>
+                        <a href="#">booking</a>
+                    </li>
+                    <li>
+                        <a href="#">pricing</a>
+                    </li>
+                    <li>
+                        <a href="#">contact us</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <a href="#" class="footer__link">
+                    <i class="icon-phone"></i>
+                    0404 202 000
+                </a>
+                <a href="#" class="footer__link">
+                    <i class="icon-email"></i>
+                    gennadys.driving@gmail.com
+                </a>
+            </div>
+        </div>
+        <div class="footer__row-2">
+            <div class="footer__desine-made text-xl">
+                Website design made with ❤️ in 🇺🇦
+            </div>
+        </div>
+    </div>
+    <div class="footer__row-3">
+        <div class="container d-flex align-items-center">
+            <svg class="me-3" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M11 20.5268C16.5228 20.5268 21 16.1311 21 10.7087C21 5.28633 16.5228 0.890625 11 0.890625C5.47715 0.890625 1 5.28633 1 10.7087C1 16.1311 5.47715 20.5268 11 20.5268Z"
+                    stroke="#8B8B8B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                    d="M14.2004 8.74667C14.2004 8.74667 13.0004 7.17578 11.0004 7.17578C9.00039 7.17578 7.40039 8.74667 7.40039 10.7103C7.40039 12.6739 9.00039 14.2448 11.0004 14.2448C13.0004 14.2448 14.2004 12.6739 14.2004 12.6739"
+                    stroke="#8B8B8B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            GDS 2022. All rights reserved.
+        </div>
+    </div>
+</footer>
+        <!-- == // FOOTER ================== -->
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/jQueryScripts.min.js"></script>
+</body>
+
+</html>
