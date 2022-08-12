@@ -17,6 +17,7 @@
     background: transparent;
     font-family: $titleFontFamily;
     transition: all .3s ease;
+    box-shadow: 5px 5px 25px rgba(60, 60, 60, 0.15);
 
     @media (max-width: $md3+px) {
         min-width: 191px;

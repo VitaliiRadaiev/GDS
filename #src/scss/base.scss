@@ -71,9 +71,6 @@ body {
 		line-height: 22px;
 	}
 
-	&.text-dark {
-		--text-color: #000;
-	}
 
 	&.bg--second {
 		background-color: $bgSecondary;
@@ -85,6 +82,7 @@ body {
 	}
 	&.bg--light {
 		background-color: $bgLight;
+		--text-color: #000;
 	}
 
 	&:not(.mobile) {

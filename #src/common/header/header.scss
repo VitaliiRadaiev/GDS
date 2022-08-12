@@ -4,7 +4,7 @@
     left: 0;
     width: 100%;
     z-index: 47;
-    transition: all .4s ease;
+    transition: all 0.4s ease;
 
     &--is-scroll {
         background-color: $bg;
@@ -18,13 +18,26 @@
         }
     }
 
+    &--light {
+        &.header--is-scroll {
+            background-color: $bgLight;
+        }
+        & .header__logo-light {
+            display: none;
+        }
+
+        & .header__logo-dark {
+            display: block;
+        }
+    }
+
     &__body {
         display: flex;
         align-items: center;
         padding-top: 2rem;
         padding-bottom: 2rem;
         gap: 4rem;
-        transition: all .4s ease;
+        transition: all 0.4s ease;
         min-height: 16.4rem;
 
         @media (max-width: $md3+px) {
@@ -47,6 +60,17 @@
             height: auto;
             display: block;
         }
+    }
+
+    &__logo-light {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__logo-dark {
+        width: 100%;
+        height: 100%;
+        display: none;
     }
 
     &__nav {
@@ -102,7 +126,7 @@
     z-index: 48;
     color: #fff;
     background-color: $bg;
-    transition: all .4s ease;
+    transition: all 0.4s ease;
     transform: translateX(100%);
 
     @media (min-width: 768px) {
@@ -144,7 +168,7 @@
             display: block;
             &:before {
                 position: absolute;
-                content: '';
+                content: "";
                 top: 0;
                 left: 50%;
                 transform: translateX(-50%);
@@ -154,7 +178,7 @@
             }
             &:after {
                 position: absolute;
-                content: '';
+                content: "";
                 top: 50%;
                 left: 0;
                 transform: translateY(-50%);
