@@ -102,8 +102,20 @@
     }
 
     &--dark {
+        background-color: #000;
+        color: #fff;
+        font-weight: 400;
+        font-family: $mainFontFamily;
+        padding-top: 1.2rem;
+
+        @media (min-width: 992px) {
+            &:hover {
+                background-color: $dangerColor;
+            }
+        }
     }
 
     &--second {
+        border-radius: 200px;
     }
 }

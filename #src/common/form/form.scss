@@ -15,16 +15,67 @@
         @media (max-width: $md3+px) {
             gap: 25px;
         }
+
+        &--big-space {
+            gap: 6.4rem;
+
+            @media (max-width: $md3+px) {
+                gap: 40px;
+            }
+        }
     }
 
     &__item {
+        position: relative;
+        @for $i from 1 through 40 {
+            &:nth-child(#{$i}) {
+                z-index: 40 - $i;
+            }
+        }
+    }
+
+    &__label {
+        display: block;
+        font-size: 2.4rem;
+        line-height: 1.2em;
+        margin-bottom: 3rem;
+
+        @media (max-width: $md3+px) {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+    }
+
+    &__input-info {
+        font-size: 1.6rem;
+        line-height: 1.2em;
+        color: #939393;
+        padding-top: 0.6rem;
+
+        @media (max-width: $md3+px) {
+            font-size: 12px;
+        }
+    }
+
+    &__list {
+        padding-left: 0;
+        margin-bottom: 0;
+
+        & > li {
+            &:not(:last-child) {
+                margin-bottom: 2rem;
+
+                @media (max-width: $md3+px) {
+                    margin-bottom: 18px;
+                }
+            }
+        }
     }
 
     &__submit {
         align-self: center;
     }
 }
-
 
 .input {
     display: flex;
@@ -41,12 +92,12 @@
     letter-spacing: 0.1em;
     font-weight: 400;
     color: var(--text-color);
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     padding: 0 0 1.2rem 0;
 
     @media (max-width: $md3+px) {
         height: 39px;
-        font-size: 14px;
+        font-size: 16px;
     }
 
     &:focus {
@@ -54,10 +105,18 @@
     }
 
     &::placeholder {
-        color: #ADADAD;
+        color: #adadad;
         text-transform: uppercase;
     }
+
+    &--dark {
+        &::placeholder {
+            color: $textColor;
+            text-transform: none;
+        }
+    }
 }
+
 .textarea {
     display: block;
     width: 100%;
@@ -74,7 +133,7 @@
     font-weight: 400;
     color: var(--text-color);
     resize: none;
-    transition: all .3s ease;
+    transition: all 0.3s ease;
     padding: 0 0 1.2rem 0;
 
     @media (max-width: $md3+px) {
@@ -87,7 +146,7 @@
     }
 
     &::placeholder {
-        color: #ADADAD;
+        color: #adadad;
         text-transform: uppercase;
     }
 
@@ -116,8 +175,8 @@
 
         &:checked ~ {
             & .checkbox-radio__square {
-               // background-color: $active;
-               // border-color: $active;
+                // background-color: $active;
+                // border-color: $active;
                 background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEwIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0wLjk5OTk5OSA0LjYzNTg4TDIuNDc0NzEgNi4xMTA1OUMyLjg2NTIzIDYuNTAxMTEgMy40OTg0IDYuNTAxMTEgMy44ODg5MiA2LjExMDU5TDkgMC45OTk1MTIiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMS4yIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KPC9zdmc+Cg==");
             }
         }
@@ -138,5 +197,72 @@
         font-weight: 400;
         font-size: 14px;
         line-height: 1.5em;
+    }
+}
+
+.checkbox-radio {
+    display: flex;
+    position: relative;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+
+    & input {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+        visibility: hidden;
+
+        &:checked ~ {
+            & .checkbox-radio__square {
+                &::before {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &__square {
+        flex: 0 0 auto;
+        margin-right: 1.6rem;
+        width: 2.8rem;
+        height: 2.8rem;
+        border: 1px solid #a3a3a3;
+        border-radius: 50%;
+        position: relative;
+
+        @media (max-width: $md3+px) {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+        }
+
+        &:before {
+            position: absolute;
+            content: "";
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 80%;
+            background-color: $dangerColor;
+            border-radius: 50%;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+    }
+
+    &__text {
+        font-weight: 400;
+        font-size: 2.4rem;
+        line-height: 1.2em;
+        color: #4a4a4a;
+        border-radius: 200px;
+        padding: 0.4rem 1.7rem;
+
+        @media (max-width: $md3+px) {
+            font-size: 16px;
+            padding: 4px 14px;
+        }
     }
 }

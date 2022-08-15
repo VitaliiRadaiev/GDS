@@ -1,0 +1,157 @@
+.booking-select {
+    position: relative;
+
+    &--open {
+        & .booking-select__head {
+            &::before {
+                transform: scale(1, -1);
+            }
+        }
+
+        & .booking-select__collapse-box {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+    }
+
+    &--selected {
+    }
+
+    &__head {
+        position: relative;
+        cursor: pointer;
+        user-select: none;
+
+        &-text {
+            display: flex;
+            align-items: flex-end;
+            width: 100%;
+            background: transparent;
+            border-radius: 0;
+            box-shadow: none;
+            min-height: 4.5rem;
+            border: none;
+            border-bottom: 1px solid #646464;
+            outline: none;
+            font-size: 2.4rem;
+            line-height: 1.38em;
+            font-weight: 400;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+            padding: 0 4rem 1.2rem 0;
+
+            @media (max-width: $md3+px) {
+                min-height: 39px;
+                font-size: 16px;
+                line-height: 1.5em;
+                padding-bottom: 5px;
+            }
+        }
+
+        &:before {
+            position: absolute;
+            font-family: "icomoon" !important;
+            content: "\e90c";
+            bottom: 1.3rem;
+            right: 2rem;
+            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+            font-size: 1em;
+            color: #606060;
+
+            @media (max-width: $md3+px) {
+                right: 10px;
+                bottom: 8px;
+            }
+        }
+    }
+
+    &__chosen-item {
+        position: absolute;
+        pointer-events: none;
+        top: 0;
+        right: 0;
+        transform: translateY(-70%);
+        font-size: 1.4rem;
+        line-height: 1.2em;
+        color: $textColorSecondary;
+
+        @media (max-width: $md3+px) {
+            font-size: 12px;
+        }
+    }
+
+    &__collapse-box {
+        padding: 2.7rem 3.2rem;
+        border: 0.1rem solid #525252;
+        border-radius: 4.5rem;
+        position: absolute;
+        top: calc(100% + 0.7rem);
+        right: 0;
+        width: 100%;
+        max-width: 37.5rem;
+        background-color: #fff;
+        transition: all 0.3s ease;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-2rem);
+
+        @media (max-width: $md3+px) {
+            padding: 17px 22px;
+            border-radius: 30px;
+        }
+    }
+
+    &__scroll-wrap {
+    }
+
+    &__scroll-box {
+        overflow: auto;
+        max-height: 22rem;
+
+        &::-webkit-scrollbar {
+            width: 2px;
+            height: 2px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #034563;
+            border-radius: 10px;
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            background: #b3afb3;
+        }
+        &::-webkit-scrollbar-track {
+            background: #efefef;
+            border-radius: 10px;
+            box-shadow: inset 0px 0px 0px 0px #f0f0f0;
+        }
+
+        @media (max-width: $md3+px) {
+            max-height: 19rem;
+        }
+    }
+
+    &__label {
+        font-weight: 400;
+        font-size: 1.6rem;
+        line-height: 120%;
+        color: #939393;
+        display: block;
+        margin-bottom: 1.5rem;
+
+        @media (max-width: $md3+px) {
+            font-size: 14px;
+        }
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 2rem;
+
+            @media (max-width: $md3+px) {
+                margin-bottom: 18px;
+            }
+        }
+    }
+}

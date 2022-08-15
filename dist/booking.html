@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>GDS</title>
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+	<style>
+		body.page-is-load ._preload-body {
+			opacity: 0;
+			visibility: hidden;
+		}
+
+		body.page-is-load ._preload-body:before {
+			display: none;
+		}
+
+		.mouse-dot {
+			font-size: 10px;
+			height: 2em;
+			width: 2em;
+			transition: transform, background-color, height, width .3s ease;
+			position: absolute;
+			z-index: 99999;
+			border-radius: 50%;
+			background-color: #222222;
+			transform: translate(-50%, -50%) scale(1);
+			pointer-events: none;
+			left: -30px;
+			top: -30px;
+			box-shadow: 0 0 15px rgba(243, 241, 239, 0.4);
+		}
+
+		.mouse-dot.hide {
+			transform: translate(-50%, -50%) scale(0);
+		}
+
+		.mouse-dot.hover {
+
+		}
+
+		._preload-body {
+			background-color: #fff;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 999;
+			transition: all .6s ease .2s;
+		}
+
+		._preload-body:before {
+			position: absolute;
+			content: '';
+			z-index: 999;
+			top: 50%;
+			left: 50%;
+			height: 50px;
+			width: 50px;
+			border-radius: 50%;
+			border: 4px solid #6e6e6e;
+			border-right: 4px solid #fff;
+			transform: translate(-50%, -50%);
+			animation: preloadBody 2s linear infinite;
+		}
+
+		@keyframes preloadBody {
+			from {
+				transform: translate(-50%, -50%) rotate(0);
+			}
+
+			to {
+				transform: translate(-50%, -50%) rotate(360deg);
+			}
+		}
+	</style>
+	
+<script src="js/vendors.js"></script>
+<script src="js/app.js"></script>
+<!-- <script
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q82l2QjSzJJk1uUW3OzUBGPTlbk8w1g&callback=initMap&libraries=&v=weekly"
+defer
+></script> -->
+</head>
+
+<body class="bg--light">
+    <div class="_preload-body"></div>
+    <div class="main-wrapper">
+        <!-- == HEADER ================== -->
+        <header class="header header--light" data-header data-popup="add-right-padding">
+    <div class="container">
+        <div class="header__body">
+            <div class="header__logo">
+                <a href="#">
+                    <div class="header__logo-light">
+                        <img src="img/logo/logo.png" alt="">
+                    </div>
+                    <div class="header__logo-dark">
+                        <img src="img/logo/logo-dark.png" alt="">
+                    </div>
+                </a>
+            </div>
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li>
+                        <a href="#">About us</a>
+                    </li>
+                    <li>
+                        <a href="#">Pricing</a>
+                    </li>
+                    <li>
+                        <a href="#">FAQs</a>
+                    </li>
+                </ul>
+            </nav>
+            <a href="#" class="header__link">
+                CONTACT US
+            </a>
+            <button class="header__burger" data-action="open-mob-menu">
+                <img class="img-svg" src="img/icons/burger.svg" alt="">
+            </button>
+        </div>
+    </div>
+</header>
+
+<div class="mobile-menu" data-mob-menu >
+    <div class="mobile-menu__head">
+        <div class="mobile-menu__logo">
+            <a href="#">
+                <img src="img/logo/logo.png" alt="">
+            </a>
+        </div>
+        <button class="mobile-menu__close" data-action="close-mob-menu"><span></span></button>
+    </div>
+    <div class="mobile-menu__scroll-wrap">
+        <a href="#" class="mobile-menu__link">
+            CONTACT US
+        </a>
+        <ul class="mobile-menu__nav">
+            <li>
+                <a href="#">About us</a>
+            </li>
+            <li>
+                <a href="#">Pricing</a>
+            </li>
+            <li>
+                <a href="#">FAQs</a>
+            </li>
+        </ul>
+    </div>
+</div>
+        <!-- == // HEADER ================== -->
+
+        <main class="_page booking-page">
+            <div class="padding-wrap-lg" data-padding-top-header-size>
+                <div class="container">
+                    <section class="booking">
+                        <div class="booking__head">
+                            <h1 class="booking__title">
+                                Students intake form
+                            </h1>
+                            <div class="booking__text text-xl">
+                                Complete the form below to become a student of Gennady Driving School!
+                            </div>
+                        </div>
+                        <form action="/">
+                            <div class="booking__from form">
+                                <div class="form__items form__items--big-space">
+                                    <div class="form__item">
+                                        <input type="text" class="input input--dark" placeholder="Full name">
+                                    </div>
+                                    <div class="form__item">
+                                        <label class="form__label">
+                                            Status
+                                        </label>
+                                        <label class="checkbox-radio">
+                                            <input type="checkbox">
+                                            <div class="checkbox-radio__square"></div>
+                                            <div class="checkbox-radio__text" style="background-color: #FAE4FF;">
+                                                New enquiry
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="form__item" data-mask="9{*}">
+                                        <input type="text" class="input input--dark" placeholder="Phone number">
+                                        <div class="form__input-info">
+                                            Please enter as: 04** *** ***
+                                        </div>
+                                    </div>
+                                    <div class="form__item">
+                                        <input type="email" class="input input--dark" placeholder="E-mail">
+                                    </div>
+                                    <div class="form__item">
+                                        <label class="form__label">
+                                            Package type (desired)
+                                        </label>
+                                        <ul class="form__list">
+                                            <li>
+                                                <label class="checkbox-radio">
+                                                    <input type="radio" name="2">
+                                                    <div class="checkbox-radio__square"></div>
+                                                    <div class="checkbox-radio__text"
+                                                        style="background-color: #FFE7E7;">
+                                                        4 * 60min lesson
+                                                    </div>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="checkbox-radio">
+                                                    <input type="radio" name="2">
+                                                    <div class="checkbox-radio__square"></div>
+                                                    <div class="checkbox-radio__text"
+                                                        style="background-color: #FFF8E0;">
+                                                        8 * 60min lesson
+                                                    </div>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="checkbox-radio">
+                                                    <input type="radio" name="2">
+                                                    <div class="checkbox-radio__square"></div>
+                                                    <div class="checkbox-radio__text"
+                                                        style="background-color: #E9FFE7;">
+                                                        12 * 60min lesson
+                                                    </div>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="checkbox-radio">
+                                                    <input type="radio" name="2">
+                                                    <div class="checkbox-radio__square"></div>
+                                                    <div class="checkbox-radio__text"
+                                                        style="background-color: #FAE4FF;">
+                                                        6 * 90min lesson
+                                                    </div>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="checkbox-radio">
+                                                    <input type="radio" name="2">
+                                                    <div class="checkbox-radio__square"></div>
+                                                    <div class="checkbox-radio__text"
+                                                        style="background-color: #E7E9FF;">
+                                                        custom package - wish to discuss
+                                                    </div>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="form__item">
+                                        <div class="form__radio-checkbox-select booking-select" data-booking-select>
+
+                                            <div class="booking-select__head">
+                                                <div class="booking-select__head-text">
+                                                    Drive test (with instructor) required?
+                                                </div>
+                                                <div class="booking-select__chosen-item">
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="booking-select__collapse-box">
+                                                <div class="booking-select__scroll-wrap">
+                                                    <div class="booking-select__label">
+                                                        Please choose an option
+                                                    </div>
+                                                    <div class="booking-select__scroll-box">
+                                                        <div class="booking-select__item">
+                                                            <label class="checkbox-radio">
+                                                                <input type="radio" name="select-2">
+                                                                <div class="checkbox-radio__square"></div>
+                                                                <div class="checkbox-radio__text"
+                                                                    style="background-color: #E9FFE7;">Yes</div>
+                                                            </label>
+                                                        </div>
+                                                        <div class="booking-select__item">
+                                                            <label class="checkbox-radio">
+                                                                <input type="radio" name="select-2">
+                                                                <div class="checkbox-radio__square"></div>
+                                                                <div class="checkbox-radio__text"
+                                                                    style="background-color: #FFCEC7;">No</div>
+                                                            </label>
+                                                        </div>
+                                                        <div class="booking-select__item">
+                                                            <label class="checkbox-radio">
+                                                                <input type="radio" name="select-2">
+                                                                <div class="checkbox-radio__square"></div>
+                                                                <div class="checkbox-radio__text"
+                                                                    style="background-color: #FFF6BE;">Undecided at this
+                                                                    time.</div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="form__item">
+                                        <div class="form__radio-checkbox-select booking-select" data-booking-select>
+
+                                            <div class="booking-select__head">
+                                                <div class="booking-select__head-text">
+                                                    Current practice level
+                                                </div>
+                                                <div class="booking-select__chosen-item">
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="booking-select__collapse-box">
+                                                <div class="booking-select__scroll-wrap">
+                                                    <div class="booking-select__label">
+                                                        Please choose an option
+                                                    </div>
+                                                    <div class="booking-select__scroll-box">
+                                                        <div class="booking-select__item">
+                                                            <label class="checkbox-radio">
+                                                                <input type="radio" name="select-2">
+                                                                <div class="checkbox-radio__square"></div>
+                                                                <div class="checkbox-radio__text"
+                                                                    style="background-color: #FAE4FF;">0 - 30 hours</div>
+                                                            </label>
+                                                        </div>
+                                                        <div class="booking-select__item">
+                                                            <label class="checkbox-radio">
+                                                                <input type="radio" name="select-2">
+                                                                <div class="checkbox-radio__square"></div>
+                                                                <div class="checkbox-radio__text"
+                                                                    style="background-color: #FFE7E7;">30 - 70 hours</div>
+                                                            </label>
+                                                        </div>
+                                                        <div class="booking-select__item">
+                                                            <label class="checkbox-radio">
+                                                                <input type="radio" name="select-2">
+                                                                <div class="checkbox-radio__square"></div>
+                                                                <div class="checkbox-radio__text"
+                                                                    style="background-color: #E9FFE7;">70 - 120 hours</div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="form__item">
+                                        <div class="date" data-date>
+                                            <div class="date__title">
+                                                Pref. start date
+                                            </div>
+                                            <input type="text" class="date__input" placeholder="dd/mm/yyyy">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form__bottom text-center">
+                                    <button type="submit"
+                                        class="form__submit btn-default btn-default--second btn-default--dark text-uppercase">submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <!-- == FOOTER ================== -->
+        <footer class="footer footer--light">
+    <div class="container">
+        <div class="footer__row-1">
+            <div class="footer__col">
+                <div class="footer__logo">
+                    <a href="#">
+                        <div class="footer__logo-light">
+                            <img src="img/logo/logo.png" alt="">
+                        </div>
+                        <div class="footer__logo-dark">
+                            <img src="img/logo/logo-dark.png" alt="">
+                        </div>
+                        
+                    </a>
+                </div>
+                <ul class="social">
+                    <li>
+                        <a href="#">
+                            <i class="icon-instagram"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="icon-facebook"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="icon-twitter"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <ul class="footer__nav">
+                    <li>
+                        <a href="#">About us</a>
+                    </li>
+                    <li>
+                        <a href="#">pricing</a>
+                    </li>
+                    <li>
+                        <a href="#">contact us</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <a href="#" class="footer__link">
+                    <i class="icon-phone"></i>
+                    0404 202 000
+                </a>
+                <a href="#" class="footer__link">
+                    <i class="icon-email"></i>
+                    gennadys.driving@gmail.com
+                </a>
+            </div>
+        </div>
+        <div class="footer__row-2">
+            <div class="footer__desine-made text-xl">
+                Website design made with ❤️ in 🇺🇦
+            </div>
+        </div>
+    </div>
+    <div class="footer__row-3">
+        <div class="container d-flex align-items-center">
+            <svg class="me-3" width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M11 20.5268C16.5228 20.5268 21 16.1311 21 10.7087C21 5.28633 16.5228 0.890625 11 0.890625C5.47715 0.890625 1 5.28633 1 10.7087C1 16.1311 5.47715 20.5268 11 20.5268Z"
+                    stroke="#8B8B8B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                    d="M14.2004 8.74667C14.2004 8.74667 13.0004 7.17578 11.0004 7.17578C9.00039 7.17578 7.40039 8.74667 7.40039 10.7103C7.40039 12.6739 9.00039 14.2448 11.0004 14.2448C13.0004 14.2448 14.2004 12.6739 14.2004 12.6739"
+                    stroke="#8B8B8B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            GDS 2022. All rights reserved.
+        </div>
+    </div>
+</footer>
+        <!-- == // FOOTER ================== -->
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/jQueryScripts.min.js"></script>
+
+</body>
+
+</html>

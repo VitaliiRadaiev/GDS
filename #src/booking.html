@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('_head.html',{
+"title": "GDS"
+})
+
+<body class="bg--light">
+    <div class="_preload-body"></div>
+    <div class="main-wrapper">
+        <!-- == HEADER ================== -->
+        @@include('common/header/_header.html',{
+        "mod": "header--light"
+        })
+        <!-- == // HEADER ================== -->
+
+        <main class="_page booking-page">
+            <div class="padding-wrap-lg" data-padding-top-header-size>
+                <div class="container">
+                    <section class="booking">
+                        <div class="booking__head">
+                            <h1 class="booking__title">
+                                Students intake form
+                            </h1>
+                            <div class="booking__text text-xl">
+                                Complete the form below to become a student of Gennady Driving School!
+                            </div>
+                        </div>
+                        <form action="/">
+                            <div class="booking__from form">
+                                <div class="form__items form__items--big-space">
+                                    <div class="form__item">
+                                        <input type="text" class="input input--dark" placeholder="Full name">
+                                    </div>
+                                    <div class="form__item">
+                                        <label class="form__label">
+                                            Status
+                                        </label>
+                                        <label class="checkbox-radio">
+                                            <input type="checkbox">
+                                            <div class="checkbox-radio__square"></div>
+                                            <div class="checkbox-radio__text" style="background-color: #FAE4FF;">
+                                                New enquiry
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="form__item" data-mask="9{*}">
+                                        <input type="text" class="input input--dark" placeholder="Phone number">
+                                        <div class="form__input-info">
+                                            Please enter as: 04** *** ***
+                                        </div>
+                                    </div>
+                                    <div class="form__item">
+                                        <input type="email" class="input input--dark" placeholder="E-mail">
+                                    </div>
+                                    <div class="form__item">
+                                        <label class="form__label">
+                                            Package type (desired)
+                                        </label>
+                                        <ul class="form__list">
+                                            <li>
+                                                <label class="checkbox-radio">
+                                                    <input type="radio" name="2">
+                                                    <div class="checkbox-radio__square"></div>
+                                                    <div class="checkbox-radio__text"
+                                                        style="background-color: #FFE7E7;">
+                                                        4 * 60min lesson
+                                                    </div>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="checkbox-radio">
+                                                    <input type="radio" name="2">
+                                                    <div class="checkbox-radio__square"></div>
+                                                    <div class="checkbox-radio__text"
+                                                        style="background-color: #FFF8E0;">
+                                                        8 * 60min lesson
+                                                    </div>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="checkbox-radio">
+                                                    <input type="radio" name="2">
+                                                    <div class="checkbox-radio__square"></div>
+                                                    <div class="checkbox-radio__text"
+                                                        style="background-color: #E9FFE7;">
+                                                        12 * 60min lesson
+                                                    </div>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="checkbox-radio">
+                                                    <input type="radio" name="2">
+                                                    <div class="checkbox-radio__square"></div>
+                                                    <div class="checkbox-radio__text"
+                                                        style="background-color: #FAE4FF;">
+                                                        6 * 90min lesson
+                                                    </div>
+                                                </label>
+                                            </li>
+                                            <li>
+                                                <label class="checkbox-radio">
+                                                    <input type="radio" name="2">
+                                                    <div class="checkbox-radio__square"></div>
+                                                    <div class="checkbox-radio__text"
+                                                        style="background-color: #E7E9FF;">
+                                                        custom package - wish to discuss
+                                                    </div>
+                                                </label>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="form__item">
+                                        <div class="form__radio-checkbox-select booking-select" data-booking-select>
+
+                                            <div class="booking-select__head">
+                                                <div class="booking-select__head-text">
+                                                    Drive test (with instructor) required?
+                                                </div>
+                                                <div class="booking-select__chosen-item">
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="booking-select__collapse-box">
+                                                <div class="booking-select__scroll-wrap">
+                                                    <div class="booking-select__label">
+                                                        Please choose an option
+                                                    </div>
+                                                    <div class="booking-select__scroll-box">
+                                                        <div class="booking-select__item">
+                                                            <label class="checkbox-radio">
+                                                                <input type="radio" name="select-2">
+                                                                <div class="checkbox-radio__square"></div>
+                                                                <div class="checkbox-radio__text"
+                                                                    style="background-color: #E9FFE7;">Yes</div>
+                                                            </label>
+                                                        </div>
+                                                        <div class="booking-select__item">
+                                                            <label class="checkbox-radio">
+                                                                <input type="radio" name="select-2">
+                                                                <div class="checkbox-radio__square"></div>
+                                                                <div class="checkbox-radio__text"
+                                                                    style="background-color: #FFCEC7;">No</div>
+                                                            </label>
+                                                        </div>
+                                                        <div class="booking-select__item">
+                                                            <label class="checkbox-radio">
+                                                                <input type="radio" name="select-2">
+                                                                <div class="checkbox-radio__square"></div>
+                                                                <div class="checkbox-radio__text"
+                                                                    style="background-color: #FFF6BE;">Undecided at this
+                                                                    time.</div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="form__item">
+                                        <div class="form__radio-checkbox-select booking-select" data-booking-select>
+
+                                            <div class="booking-select__head">
+                                                <div class="booking-select__head-text">
+                                                    Current practice level
+                                                </div>
+                                                <div class="booking-select__chosen-item">
+                                                    
+                                                </div>
+                                            </div>
+                                            <div class="booking-select__collapse-box">
+                                                <div class="booking-select__scroll-wrap">
+                                                    <div class="booking-select__label">
+                                                        Please choose an option
+                                                    </div>
+                                                    <div class="booking-select__scroll-box">
+                                                        <div class="booking-select__item">
+                                                            <label class="checkbox-radio">
+                                                                <input type="radio" name="select-2">
+                                                                <div class="checkbox-radio__square"></div>
+                                                                <div class="checkbox-radio__text"
+                                                                    style="background-color: #FAE4FF;">0 - 30 hours</div>
+                                                            </label>
+                                                        </div>
+                                                        <div class="booking-select__item">
+                                                            <label class="checkbox-radio">
+                                                                <input type="radio" name="select-2">
+                                                                <div class="checkbox-radio__square"></div>
+                                                                <div class="checkbox-radio__text"
+                                                                    style="background-color: #FFE7E7;">30 - 70 hours</div>
+                                                            </label>
+                                                        </div>
+                                                        <div class="booking-select__item">
+                                                            <label class="checkbox-radio">
+                                                                <input type="radio" name="select-2">
+                                                                <div class="checkbox-radio__square"></div>
+                                                                <div class="checkbox-radio__text"
+                                                                    style="background-color: #E9FFE7;">70 - 120 hours</div>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="form__item">
+                                        <div class="date" data-date>
+                                            <div class="date__title">
+                                                Pref. start date
+                                            </div>
+                                            <input type="text" class="date__input" placeholder="dd/mm/yyyy">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form__bottom text-center">
+                                    <button type="submit"
+                                        class="form__submit btn-default btn-default--second btn-default--dark text-uppercase">submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </main>
+
+        <!-- == FOOTER ================== -->
+        @@include('common/footer/_footer.html',{"mod": "footer--light"})
+        <!-- == // FOOTER ================== -->
+    </div>
+
+    @@include('_js-bottom.html',{})
+
+</body>
+
+</html>

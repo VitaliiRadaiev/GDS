@@ -231,6 +231,8 @@ class App {
 		@@include('../common/header/header.js')
 		@@include('../common/buttons/buttons.js')
 		@@include('../common/locality/locality.js')
+		@@include('../common/booking-select/booking-select.js')
+		@@include('../common/date/date.js')
 	}
 
 	afterLoad() {
