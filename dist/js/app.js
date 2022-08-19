@@ -1165,22 +1165,26 @@ if (bookingSelects.length) {
         if (innerInputs.length) {
             innerInputs.forEach(checkboxRadio => {
                 if(checkboxRadio.type === 'radio') {
-                    let textEl = checkboxRadio.closest('.checkbox-radio').querySelector('.checkbox-radio__text');
+                    let wrap = checkboxRadio.closest('.checkbox-radio');
+                    if(!wrap) {
+                        wrap = checkboxRadio.closest('.wpcf7-list-item');
+                    }
+                    let textEl = wrap.querySelector('.checkbox-radio__text, .wpcf7-list-item-label');
                     // init
                     if (checkboxRadio.checked) {
                         bookingSelect.classList.add('booking-select--selected');
-                        headText.innerText = textEl.innerText;
+                        headText.innerText = textEl.innerHTML;
                     }
 
                     checkboxRadio.addEventListener('change', () => {
                         if (checkboxRadio.checked) {
                             bookingSelect.classList.add('booking-select--selected');
-                            headText.innerText = textEl.innerText;
+                            headText.innerText = textEl.innerHTML;
                         }
                     })
                 } else if(checkboxRadio.type === 'checkbox') {
                     checkboxRadio.addEventListener('change', () => {
-                        let text = innerInputs.filter(i => i.checked).map(i => i.closest('.checkbox-radio').querySelector('.checkbox-radio__text').innerText);
+                        let text = innerInputs.filter(i => i.checked).map(i => i.closest('.checkbox-radio').querySelector('.checkbox-radio__text', '.wpcf7-list-item-label').innerText);
                         if(text.length) {
                             bookingSelect.classList.add('booking-select--selected');
                             headText.innerText = text.join(', ');
@@ -1205,19 +1209,20 @@ if (bookingSelects.length) {
         }
     })
 }
-		{ 
+		{
     let dateAll = document.querySelectorAll('[data-date]');
-    if(dateAll.length) {
+    if (dateAll.length) {
         dateAll.forEach(date => {
             let input = date.querySelector('.date__input');
+            let title = date.querySelector('.date__title');
 
-            if(input) {
-                console.log(datepicker);
+            if (input) {
+
                 const bookingDate = datepicker(input, {
                     formatter: (input, date, instance) => {
-						const value = date.toLocaleDateString()
-						input.value = value
-					},
+                        const value = date.toLocaleDateString()
+                        input.value = value
+                    },
                     customDays: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
                     minDate: new Date(),
                     onShow: () => {
@@ -1225,6 +1230,44 @@ if (bookingSelects.length) {
                     },
                     onHide: () => {
                         date.classList.remove('date--open');
+                    }
+                })
+
+
+                title.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    console.log(bookingDate);
+                    bookingDate.show();
+                })
+            }
+
+
+        })
+    }
+}
+		{
+    let wpRadios = document.querySelectorAll('.wpcf7-form-control.wpcf7-radio label input');
+    if(wpRadios.length) {
+        wpRadios.forEach(input => {
+            let radioSquare = document.createElement('div');
+            radioSquare.className = 'checkbox-radio__square';
+
+            input.after(radioSquare);
+        })
+    }
+
+    let wpCheckboxes = document.querySelectorAll('input[type="checkbox"]');
+    if(wpCheckboxes.length) {
+        wpCheckboxes.forEach(checkbox => {
+            let wrapper = checkbox.closest('.checkbox-radio');
+
+            if(wrapper) {
+                checkbox.addEventListener('change', () => {
+                    if(checkbox.checked) {
+                        wrapper.classList.add('checkbox-radio--checked');
+                    } else {
+                        wrapper.classList.remove('checkbox-radio--checked');
                     }
                 })
             }

@@ -3489,6 +3489,11 @@ figure {
   z-index: 0;
 }
 
+.form__item .wpcf7-not-valid-tip {
+  font-size: 0.6em;
+  line-height: 1.6em;
+}
+
 .form__label {
   display: block;
   font-size: 2.4rem;
@@ -3516,6 +3521,121 @@ figure {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+}
+
+.wpcf7-form-control.wpcf7-radio {
+  display: block;
+}
+
+.wpcf7-form-control.wpcf7-radio .wpcf7-list-item {
+  margin-left: 0;
+  display: block;
+}
+
+.wpcf7-form-control.wpcf7-radio .wpcf7-list-item:not(:last-child) {
+  margin-bottom: 2rem;
+}
+
+.wpcf7-form-control.wpcf7-radio .wpcf7-list-item label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+
+.wpcf7-form-control.wpcf7-radio .wpcf7-list-item label input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.wpcf7-form-control.wpcf7-radio .wpcf7-list-item label input:checked ~ .checkbox-radio__square::before {
+  opacity: 1;
+}
+
+.wpcf7-form-control.wpcf7-radio .wpcf7-list-item label .wpcf7-list-item-label {
+  font-weight: 400;
+  font-size: 2.4rem;
+  line-height: 1.2em;
+  color: #4a4a4a;
+  border-radius: 200px;
+  padding: 0.4rem 1.7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #FAE4FF;
+}
+
+.wpcf7-form-control.wpcf7-radio.radio-type .wpcf7-list-item:nth-child(1) .wpcf7-list-item-label {
+  background-color: #FFE7E7;
+}
+
+.wpcf7-form-control.wpcf7-radio.radio-type .wpcf7-list-item:nth-child(2) .wpcf7-list-item-label {
+  background-color: #FFF8E0;
+}
+
+.wpcf7-form-control.wpcf7-radio.radio-type .wpcf7-list-item:nth-child(3) .wpcf7-list-item-label {
+  background-color: #E9FFE7;
+}
+
+.wpcf7-form-control.wpcf7-radio.radio-type .wpcf7-list-item:nth-child(4) .wpcf7-list-item-label {
+  background-color: #FAE4FF;
+}
+
+.wpcf7-form-control.wpcf7-radio.radio-type .wpcf7-list-item:nth-child(5) .wpcf7-list-item-label {
+  background-color: #E7E9FF;
+}
+
+.wpcf7-form-control.wpcf7-radio.radio-test .wpcf7-list-item:nth-child(1) .wpcf7-list-item-label {
+  background-color: #E9FFE7;
+}
+
+.wpcf7-form-control.wpcf7-radio.radio-test .wpcf7-list-item:nth-child(2) .wpcf7-list-item-label {
+  background-color: #FFCEC7;
+}
+
+.wpcf7-form-control.wpcf7-radio.radio-test .wpcf7-list-item:nth-child(3) .wpcf7-list-item-label {
+  background-color: #FFF6BE;
+}
+
+.wpcf7-form-control.wpcf7-radio.radio-test .wpcf7-list-item:nth-child(4) .wpcf7-list-item-label {
+  background-color: #FAE4FF;
+}
+
+.wpcf7-form-control.wpcf7-radio.radio-test .wpcf7-list-item:nth-child(5) .wpcf7-list-item-label {
+  background-color: #E7E9FF;
+}
+
+.wpcf7-form-control.wpcf7-radio.radio-level .wpcf7-list-item:nth-child(1) .wpcf7-list-item-label {
+  background-color: #FAE4FF;
+}
+
+.wpcf7-form-control.wpcf7-radio.radio-level .wpcf7-list-item:nth-child(2) .wpcf7-list-item-label {
+  background-color: #FFE7E7;
+}
+
+.wpcf7-form-control.wpcf7-radio.radio-level .wpcf7-list-item:nth-child(3) .wpcf7-list-item-label {
+  background-color: #E9FFE7;
+}
+
+.wpcf7-form-control.wpcf7-radio.radio-level .wpcf7-list-item:nth-child(4) .wpcf7-list-item-label {
+  background-color: #FAE4FF;
+}
+
+.wpcf7-form-control.wpcf7-radio.radio-level .wpcf7-list-item:nth-child(5) .wpcf7-list-item-label {
+  background-color: #E7E9FF;
 }
 
 .input {
@@ -3716,6 +3836,10 @@ figure {
   cursor: pointer;
 }
 
+.checkbox-radio--checked .checkbox-radio__square::before {
+  opacity: 1;
+}
+
 .checkbox-radio input {
   position: absolute;
   z-index: -1;
@@ -3725,6 +3849,13 @@ figure {
 
 .checkbox-radio input:checked ~ .checkbox-radio__square::before {
   opacity: 1;
+}
+
+.checkbox-radio .wpcf7-form-control-wrap {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .checkbox-radio__square {
@@ -3737,6 +3868,9 @@ figure {
   border: 1px solid #a3a3a3;
   border-radius: 50%;
   position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80%;
 }
 
 .checkbox-radio__square:before {
@@ -3958,14 +4092,9 @@ figure {
 .booking-select__chosen-item {
   position: absolute;
   pointer-events: none;
-  top: 0;
-  right: 0;
-  -webkit-transform: translateY(-70%);
-      -ms-transform: translateY(-70%);
-          transform: translateY(-70%);
-  font-size: 1.4rem;
-  line-height: 1.2em;
-  color: #B9B9B9;
+  bottom: 1.1rem;
+  right: 7.8rem;
+  white-space: nowrap;
 }
 
 .booking-select__collapse-box {
@@ -4118,6 +4247,15 @@ figure {
 
 .date__input::placeholder {
   color: #000;
+}
+
+.date .wpcf7-form-control-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
 }
 
 .home-banner {
@@ -6205,6 +6343,15 @@ figure {
     margin-bottom: 18px;
   }
 
+  .wpcf7-form-control.wpcf7-radio .wpcf7-list-item:not(:last-child) {
+    margin-bottom: 18px;
+  }
+
+  .wpcf7-form-control.wpcf7-radio .wpcf7-list-item label .wpcf7-list-item-label {
+    font-size: 16px;
+    padding: 4px 14px;
+  }
+
   .input {
     height: 39px;
     font-size: 16px;
@@ -6300,7 +6447,14 @@ figure {
   }
 
   .booking-select__chosen-item {
-    font-size: 12px;
+    font-size: 14px;
+    right: 0;
+    bottom: auto;
+    top: 0;
+    -webkit-transform: translateY(-70%);
+        -ms-transform: translateY(-70%);
+            transform: translateY(-70%);
+    color: #B9B9B9;
   }
 
   .booking-select__collapse-box {
@@ -6332,11 +6486,46 @@ figure {
     bottom: 8px;
   }
 
+  .date__input::-webkit-input-placeholder {
+    color: #B9B9B9;
+  }
+
+  .date__input::-moz-placeholder {
+    color: #B9B9B9;
+  }
+
+  .date__input:-ms-input-placeholder {
+    color: #B9B9B9;
+  }
+
+  .date__input::-ms-input-placeholder {
+    color: #B9B9B9;
+  }
+
+  .date__input::placeholder {
+    color: #B9B9B9;
+  }
+
   .date__input {
-    font-size: 16px;
+    font-size: 14px;
     line-height: 1.5em;
     padding-bottom: 0px;
-    padding-right: 50px;
+    padding-right: 0px;
+    -webkit-transform: translateY(-70%);
+        -ms-transform: translateY(-70%);
+            transform: translateY(-70%);
+    color: #B9B9B9;
+  }
+
+  .date__input:after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-color: red;
   }
 
   .home-banner__col-2 {

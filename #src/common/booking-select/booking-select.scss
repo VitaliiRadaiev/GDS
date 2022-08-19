@@ -70,15 +70,17 @@
     &__chosen-item {
         position: absolute;
         pointer-events: none;
-        top: 0;
-        right: 0;
-        transform: translateY(-70%);
-        font-size: 1.4rem;
-        line-height: 1.2em;
-        color: $textColorSecondary;
+        bottom: 1.1rem;
+        right: 7.8rem;
+        white-space: nowrap;
 
         @media (max-width: $md3+px) {
-            font-size: 12px;
+            font-size: 14px;
+            right: 0;
+            bottom: auto;
+            top: 0;
+            transform: translateY(-70%);
+            color: $textColorSecondary;
         }
     }
 

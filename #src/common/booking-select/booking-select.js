@@ -21,22 +21,26 @@ if (bookingSelects.length) {
         if (innerInputs.length) {
             innerInputs.forEach(checkboxRadio => {
                 if(checkboxRadio.type === 'radio') {
-                    let textEl = checkboxRadio.closest('.checkbox-radio').querySelector('.checkbox-radio__text');
+                    let wrap = checkboxRadio.closest('.checkbox-radio');
+                    if(!wrap) {
+                        wrap = checkboxRadio.closest('.wpcf7-list-item');
+                    }
+                    let textEl = wrap.querySelector('.checkbox-radio__text, .wpcf7-list-item-label');
                     // init
                     if (checkboxRadio.checked) {
                         bookingSelect.classList.add('booking-select--selected');
-                        headText.innerText = textEl.innerText;
+                        headText.innerText = textEl.innerHTML;
                     }
 
                     checkboxRadio.addEventListener('change', () => {
                         if (checkboxRadio.checked) {
                             bookingSelect.classList.add('booking-select--selected');
-                            headText.innerText = textEl.innerText;
+                            headText.innerText = textEl.innerHTML;
                         }
                     })
                 } else if(checkboxRadio.type === 'checkbox') {
                     checkboxRadio.addEventListener('change', () => {
-                        let text = innerInputs.filter(i => i.checked).map(i => i.closest('.checkbox-radio').querySelector('.checkbox-radio__text').innerText);
+                        let text = innerInputs.filter(i => i.checked).map(i => i.closest('.checkbox-radio').querySelector('.checkbox-radio__text', '.wpcf7-list-item-label').innerText);
                         if(text.length) {
                             bookingSelect.classList.add('booking-select--selected');
                             headText.innerText = text.join(', ');

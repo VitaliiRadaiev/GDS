@@ -233,6 +233,7 @@ class App {
 		@@include('../common/locality/locality.js')
 		@@include('../common/booking-select/booking-select.js')
 		@@include('../common/date/date.js')
+		@@include('../common/form/form.js')
 	}
 
 	afterLoad() {
